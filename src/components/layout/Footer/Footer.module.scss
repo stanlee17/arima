@@ -1,0 +1,11 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.footer {
+  background: $bgOverlayColor;
+  text-align: center;
+
+  & p {
+    padding: 1rem 0;
+    margin: 0;
+  }
+}

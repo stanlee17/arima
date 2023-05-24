@@ -1,0 +1,62 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.hero {
+  min-height: 100vh;
+
+  & .wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  & .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 45vw;
+    min-height: 90vh;
+
+    & h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+
+    & p {
+      line-height: 2;
+      margin-bottom: 1.5rem;
+      z-index: 999;
+    }
+
+    & span {
+      color: $primaryColor;
+    }
+  }
+
+  .button {
+    padding: 0.8rem 3.5rem;
+    color: $whiteColor;
+    font-weight: bold;
+    border-radius: 20rem;
+    text-decoration: none;
+    background-color: $primaryColor;
+  }
+
+  &Image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 3.125rem;
+    min-width: 35vw;
+    background-image: linear-gradient(
+        rgba(15, 20, 30, 0.8),
+        rgba(15, 20, 30, 0.5)
+      ),
+      url('../../../../public/backgrounds/hero-bg.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 90vh;
+    object-fit: cover;
+  }
+}

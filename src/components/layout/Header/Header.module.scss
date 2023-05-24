@@ -1,0 +1,31 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.navbar {
+  z-index: 10;
+  min-width: 100%;
+  background-color: transparent;
+
+  & .navbarBrand {
+    cursor: pointer;
+    z-index: 9999;
+    font-weight: 500;
+
+    & span {
+      color: $primaryColor;
+    }
+  }
+
+  & .navLink {
+    color: $whiteColor;
+    font-weight: bold;
+    transition: all 0.5s;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+}
