@@ -1,0 +1,13 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.animeCard {
+  img {
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  & .animeLink {
+    @include arima-link($whiteColor, $primaryColor);
+    margin: 0.8rem 0;
+  }
+}

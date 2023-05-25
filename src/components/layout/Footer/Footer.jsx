@@ -9,7 +9,7 @@ function Footer() {
   return (
     <div className={styles.footer}>
       <Container>
-        <p>&copy; {getCurrentYear()} Arima</p>
+        <p>&copy; {getCurrentYear()} Arima, Powered by Next.js</p>
       </Container>
     </div>
   );

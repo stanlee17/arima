@@ -1,0 +1,10 @@
+@mixin arima-link($textColor, $hoverTextColor) {
+  display: inline-block;
+  text-decoration: none;
+  color: $textColor;
+  transition: all 0.5s;
+
+  &:hover {
+    color: $hoverTextColor;
+  }
+}
