@@ -1,19 +1,17 @@
-import Link from 'next/link';
+import styles from './Trending.module.scss';
 import { Container } from 'react-bootstrap';
-
+import Link from 'next/link';
 import AnimeCard from '@/components/common/AnimeCard/AnimeCard';
 
-import styles from './Upcoming.module.scss';
-
-const Upcoming = ({ upcoming }) => {
-  const data = upcoming.data;
+const Trending = ({ trending }) => {
+  const data = trending.data;
 
   return (
     <Container>
-      <div className={styles.upcoming}>
+      <div className={styles.trending}>
         <div className={styles.heading}>
           <h2>
-            <span>U</span>pcoming
+            <span>T</span>rending
           </h2>
           <Link href="/search" className={styles.viewAll}>
             View All
@@ -25,4 +23,4 @@ const Upcoming = ({ upcoming }) => {
   );
 };
 
-export default Upcoming;
+export default Trending;

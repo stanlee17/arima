@@ -6,7 +6,7 @@ import styles from './AnimeCard.module.scss';
 const AnimeCard = ({ data }) => {
   return (
     <div>
-      <Row lg={5} md={3} xs={1} className="g-5">
+      <Row xxl={6} lg={5} md={3} xs={1} className="g-5">
         {data &&
           data.map((anime, index) => (
             <Col key={index}>
@@ -14,8 +14,9 @@ const AnimeCard = ({ data }) => {
                 <Link href="/">
                   <Image
                     src={anime.images.webp.large_image_url}
-                    width={225}
-                    height={335}
+                    width={180}
+                    height={280}
+                    priority={true}
                     alt={anime.title}
                   />
                 </Link>

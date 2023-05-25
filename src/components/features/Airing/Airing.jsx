@@ -1,19 +1,17 @@
-import Link from 'next/link';
 import { Container } from 'react-bootstrap';
-
+import Link from 'next/link';
+import styles from './Airing.module.scss';
 import AnimeCard from '@/components/common/AnimeCard/AnimeCard';
 
-import styles from './Upcoming.module.scss';
-
-const Upcoming = ({ upcoming }) => {
-  const data = upcoming.data;
+const Airing = ({ airing }) => {
+  const data = airing.data;
 
   return (
     <Container>
-      <div className={styles.upcoming}>
+      <div className={styles.airing}>
         <div className={styles.heading}>
           <h2>
-            <span>U</span>pcoming
+            <span>A</span>iring
           </h2>
           <Link href="/search" className={styles.viewAll}>
             View All
@@ -25,4 +23,4 @@ const Upcoming = ({ upcoming }) => {
   );
 };
 
-export default Upcoming;
+export default Airing;
