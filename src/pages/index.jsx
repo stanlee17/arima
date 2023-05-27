@@ -28,7 +28,7 @@ const HomePage = ({ upcoming, trending, airing }) => {
   );
 };
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async () => {
   // Multiple fetching of Upcoming, Trending Anime
   const [upcomingRes, trendingRes, airingRes] = await Promise.all([
     fetch(`${apiBaseUrl}/seasons/upcoming?limit=6`),

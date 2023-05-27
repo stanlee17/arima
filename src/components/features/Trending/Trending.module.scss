@@ -10,7 +10,7 @@
     align-items: center;
 
     & .viewAll {
-      @include arima-link($whiteColor, $primaryColor);
+      @include arima-link;
     }
 
     & h2 {

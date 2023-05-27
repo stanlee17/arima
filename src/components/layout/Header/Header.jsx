@@ -6,29 +6,33 @@ const Header = () => {
     <Navbar
       expand="lg"
       variant="dark"
-      className={`position-fixed py-4 ${styles.navbar}`}
+      fixed="top"
+      className={`py-4 ${styles.navbar}`}
     >
       <Container>
         <Navbar.Brand href="/" className={styles.navbarBrand}>
           <span>A</span>rima
         </Navbar.Brand>
-        <Nav className="ms-end">
-          <Nav.Link href="/" className={styles.navLink}>
-            Home
-          </Nav.Link>
-          <Nav.Link href="/search" className={styles.navLink}>
-            Search
-          </Nav.Link>
-          <Nav.Link href="/reviews" className={styles.navLink}>
-            Reviews
-          </Nav.Link>
-          <Nav.Link href="/about" className={styles.navLink}>
-            About
-          </Nav.Link>
-          <Nav.Link href="/contact" className={styles.navLink}>
-            Contact
-          </Nav.Link>
-        </Nav>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Nav>
+            <Nav.Link href="/" className={styles.navLink}>
+              Home
+            </Nav.Link>
+            <Nav.Link href="/search" className={styles.navLink}>
+              Search
+            </Nav.Link>
+            <Nav.Link href="/reviews" className={styles.navLink}>
+              Reviews
+            </Nav.Link>
+            <Nav.Link href="/about" className={styles.navLink}>
+              About
+            </Nav.Link>
+            <Nav.Link href="/contact" className={styles.navLink}>
+              Contact
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

@@ -1,10 +1,12 @@
-@mixin arima-link($textColor, $hoverTextColor) {
+@use './variables' as *;
+
+@mixin arima-link {
   display: inline-block;
   text-decoration: none;
-  color: $textColor;
+  color: $whiteColor;
   transition: all 0.5s;
 
   &:hover {
-    color: $hoverTextColor;
+    color: $primaryColor;
   }
 }

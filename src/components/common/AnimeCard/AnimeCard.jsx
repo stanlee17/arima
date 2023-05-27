@@ -6,21 +6,21 @@ import styles from './AnimeCard.module.scss';
 const AnimeCard = ({ data }) => {
   return (
     <div>
-      <Row xxl={6} lg={5} md={3} xs={1} className="g-5">
+      <Row xl={6} lg={5} md={3} xs={1} className="g-5">
         {data &&
-          data.map((anime, index) => (
-            <Col key={index}>
+          data.map((anime) => (
+            <Col key={anime.mal_id}>
               <div className={styles.animeCard}>
-                <Link href="/">
+                <Link href={`/${anime.mal_id}`}>
                   <Image
-                    src={anime.images.webp.large_image_url}
+                    src={anime.images.webp.image_url}
                     width={180}
-                    height={280}
+                    height={270}
                     priority={true}
                     alt={anime.title}
                   />
                 </Link>
-                <Link href="/" className={styles.animeLink}>
+                <Link href={`/${anime.mal_id}`} className={styles.animeLink}>
                   {anime.title}
                 </Link>
               </div>

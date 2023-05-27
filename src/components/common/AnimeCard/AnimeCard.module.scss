@@ -2,12 +2,12 @@
 
 .animeCard {
   img {
-    border-radius: 20px;
+    border-radius: 10px;
     object-fit: cover;
   }
 
   & .animeLink {
-    @include arima-link($whiteColor, $primaryColor);
+    @include arima-link;
     margin: 0.8rem 0;
   }
 }

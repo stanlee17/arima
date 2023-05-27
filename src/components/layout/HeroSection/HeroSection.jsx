@@ -19,7 +19,6 @@ const HeroSection = () => {
               </p>
               <a className={styles.button}>Discover</a>
             </div>
-
             <div className={styles.heroImage}></div>
           </div>
         </div>
