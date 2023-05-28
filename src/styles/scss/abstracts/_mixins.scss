@@ -2,8 +2,6 @@
 
 @mixin arima-link {
   display: inline-block;
-  text-decoration: none;
-  color: $whiteColor;
   transition: all 0.5s;
 
   &:hover {

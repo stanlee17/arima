@@ -47,6 +47,7 @@ export const getStaticProps = async () => {
       trending,
       airing,
     },
+    revalidate: 60,
   };
 };
 

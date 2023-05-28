@@ -10,3 +10,12 @@ body {
   background-color: $backgroundColor;
   color: $whiteColor;
 }
+
+a {
+  text-decoration: none;
+  color: $whiteColor;
+}
+
+a:hover {
+  color: $whiteColor;
+}

@@ -14,24 +14,35 @@ const AnimeDetailPage = () => {
   const { animeId } = router.query;
   console.log(animeId);
 
-  const { data, error, isLoading } = useSWR(
-    animeId ? `${apiBaseUrl}/anime/${animeId}/full` : null,
+  const {
+    data: anime,
+    error: animeError,
+    isLoading: animeLoading,
+  } = useSWR(
+    animeId ? `${apiBaseUrl}/anime/${animeId}` : null,
     animeId ? fetcher : null
   );
 
-  if (error) return 'An error has occurred.';
-  if (isLoading) return 'Loading...';
+  const {
+    data: characters,
+    error: charactersError,
+    isLoading: charactersLoading,
+  } = useSWR(
+    animeId ? `${apiBaseUrl}/anime/${animeId}/characters` : null,
+    animeId ? fetcher : null
+  );
 
-  console.log(data);
+  if (animeError || charactersError) return 'An error has occurred.';
+  if (animeLoading || charactersLoading) return 'Loading...';
 
   return (
-    data && (
+    anime && (
       <Fragment>
         <Head>
           <title>Arima | Anime</title>
           <meta name="description" description="Anime details" />
         </Head>
-        <AnimeDetails data={data.data} />
+        <AnimeDetails anime={anime.data} characters={characters.data} />
       </Fragment>
     )
   );

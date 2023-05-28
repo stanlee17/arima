@@ -1,0 +1,22 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.animeContent {
+  margin-left: 3rem;
+
+  & h2 {
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  & .synopsisOverlay {
+    padding: 2rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 2;
+    background-color: $bgOverlayColor;
+
+    & p {
+      margin: 0;
+    }
+  }
+}

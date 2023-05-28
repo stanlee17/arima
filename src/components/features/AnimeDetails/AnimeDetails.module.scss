@@ -1,5 +1,6 @@
 @use '@/styles/scss/abstracts/' as *;
 
 .animeDetails {
+  display: flex;
   margin: 10rem 0;
 }

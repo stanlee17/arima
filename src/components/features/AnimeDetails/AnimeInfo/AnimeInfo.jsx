@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { FaStar, FaHeart } from 'react-icons/fa';
 import styles from './AnimeInfo.module.scss';
 
-const AnimeInfo = ({ data }) => {
+const AnimeInfo = ({ anime }) => {
   // Checks whether or not the data is null
   const dataCheck = (data) => (data ? data : '???');
 
@@ -10,23 +10,23 @@ const AnimeInfo = ({ data }) => {
     <div className={styles.animeInfo}>
       {/* Main Anime Image */}
       <Image
-        src={data.images.webp.large_image_url}
+        src={anime.images.webp.large_image_url}
         width={275}
         height={375}
         className={styles.image}
-        alt={data.title}
+        alt={anime.title}
       />
 
       {/* Anime Ranking All Time */}
       <div className={styles.allTime}>
         <FaStar color="#F1B10C" size={18} />
-        <p>#{dataCheck(data.rank)} Highest Rated All Time</p>
+        <p>#{dataCheck(anime.rank)} Highest Rated All Time</p>
       </div>
 
       {/* Anime Popularity All Time */}
       <div className={styles.allTime}>
         <FaHeart color="#E8115F" size={18} />
-        <p>#{dataCheck(data.popularity)} Most Popular All Time</p>
+        <p>#{dataCheck(anime.popularity)} Most Popular All Time</p>
       </div>
 
       {/* Additional Anime Info */}
@@ -34,35 +34,35 @@ const AnimeInfo = ({ data }) => {
         <div className={styles.wrapper}>
           <div className={styles.info}>
             <h6>Format</h6>
-            <p>{dataCheck(data.type)}</p>
+            <p>{dataCheck(anime.type)}</p>
           </div>
           <div className={styles.info}>
             <h6>Source</h6>
-            <p>{dataCheck(data.source)}</p>
+            <p>{dataCheck(anime.source)}</p>
           </div>
           <div className={styles.info}>
             <h6>Episodes</h6>
-            <p>{dataCheck(data.episodes)}</p>
+            <p>{dataCheck(anime.episodes)}</p>
           </div>
           <div className={styles.info}>
             <h6>Status</h6>
-            <p>{dataCheck(data.status)}</p>
+            <p>{dataCheck(anime.status)}</p>
           </div>
           <div className={styles.info}>
             <h6>Duration</h6>
-            <p>{dataCheck(data.duration)}</p>
+            <p>{dataCheck(anime.duration)}</p>
           </div>
           <div className={styles.info}>
             <h6>Rating</h6>
-            <p>{dataCheck(data.rating)}</p>
+            <p>{dataCheck(anime.rating)}</p>
           </div>
           <div className={styles.info}>
             <h6>Season</h6>
-            <p>{dataCheck(data.season)}</p>
+            <p>{dataCheck(anime.season)}</p>
           </div>
           <div className={styles.info}>
             <h6>Broadcast</h6>
-            <p>{dataCheck(data.broadcast.string)}</p>
+            <p>{dataCheck(anime.broadcast.string)}</p>
           </div>
         </div>
       </div>

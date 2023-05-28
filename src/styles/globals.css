@@ -8,3 +8,12 @@ body {
   background-color: #0f141e;
   color: #ffffff;
 }
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a:hover {
+  color: #ffffff;
+}

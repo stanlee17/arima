@@ -3,12 +3,14 @@ import { Container } from 'react-bootstrap';
 import styles from './AnimeDetails.module.scss';
 
 import AnimeInfo from './AnimeInfo/AnimeInfo';
+import AnimeContent from './AnimeContent/AnimeContent';
 
-const AnimeDetails = ({ data }) => {
+const AnimeDetails = ({ anime, characters }) => {
   return (
     <Container>
       <div className={styles.animeDetails}>
-        <AnimeInfo data={data} />
+        <AnimeInfo anime={anime} />
+        <AnimeContent anime={anime} characters={characters} />
       </div>
     </Container>
   );
