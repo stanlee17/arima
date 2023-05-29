@@ -8,3 +8,10 @@
     color: $primaryColor;
   }
 }
+
+@mixin underline-heading {
+  padding-bottom: 0.3rem;
+  border-bottom: 3px solid $primaryColor;
+  display: inline-block;
+  margin-bottom: 1rem;
+}

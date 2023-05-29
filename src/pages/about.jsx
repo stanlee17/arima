@@ -1,7 +1,18 @@
-import React from 'react';
+import { Fragment } from 'react';
+import Head from 'next/head';
+
+import About from '@/components/pages/About/About';
 
 const AboutPage = () => {
-  return <div>about</div>;
+  return (
+    <Fragment>
+      <Head>
+        <title>Arima | About Me</title>
+        <meta name="description" description="about page" />
+      </Head>
+      <About />
+    </Fragment>
+  );
 };
 
 export default AboutPage;

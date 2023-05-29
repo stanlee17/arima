@@ -1,0 +1,15 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.about {
+  & .wrapper {
+    margin: 3rem 0;
+  }
+
+  & .introduction {
+    line-height: 2;
+
+    & h3 {
+      @include underline-heading;
+    }
+  }
+}
