@@ -1,11 +1,9 @@
 import Image from 'next/image';
+import { dataCheck } from '@/utils/utils';
 import { FaStar, FaHeart } from 'react-icons/fa';
 import styles from './AnimeInfo.module.scss';
 
 const AnimeInfo = ({ anime }) => {
-  // Checks whether or not the data is null
-  const dataCheck = (data) => (data ? data : '???');
-
   return (
     <div className={styles.animeInfo}>
       {/* Main Anime Image */}
