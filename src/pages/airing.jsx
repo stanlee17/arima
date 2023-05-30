@@ -12,8 +12,8 @@ const AiringPage = ({ data }) => {
   return (
     <Fragment>
       <Head>
-        <title>Arima | Highest Rated</title>
-        <meta name="description" description="Highest rated anime" />
+        <title>Arima | Airing</title>
+        <meta name="description" description="Airing anime" />
       </Head>
       <PageHeader
         heading="Currently Airing"

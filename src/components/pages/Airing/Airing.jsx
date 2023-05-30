@@ -7,7 +7,7 @@ const Airing = ({ data }) => {
   return (
     <Container>
       <div className={styles.airing}>
-        <AnimeCard data={data} numRow="5" />
+        <AnimeCard data={data} />
       </div>
     </Container>
   );

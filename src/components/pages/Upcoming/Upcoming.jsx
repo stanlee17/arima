@@ -6,7 +6,7 @@ const Upcoming = ({ data }) => {
   return (
     <Container>
       <div className={styles.upcoming}>
-        <AnimeCard data={data} numRow="5" />
+        <AnimeCard data={data} />
       </div>
     </Container>
   );

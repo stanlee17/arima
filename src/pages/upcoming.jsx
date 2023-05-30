@@ -12,7 +12,7 @@ const UpcomingPage = ({ data }) => {
         <title>Arima | Upcoming</title>
         <meta name="description" description="Upcoming Anime" />
       </Head>
-      <PageHeader heading="Highest Rated" sub="Upcoming anime next season" />
+      <PageHeader heading="Upcoming" sub="Upcoming anime next season" />
       <Upcoming data={data.data} />
     </Fragment>
   );

@@ -6,7 +6,7 @@ const HighestRated = ({ data }) => {
   return (
     <Container>
       <div className={styles.highestRated}>
-        <AnimeCard data={data} numRow="5" />
+        <AnimeCard data={data} />
       </div>
     </Container>
   );
