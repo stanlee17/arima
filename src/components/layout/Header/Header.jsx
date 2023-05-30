@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import styles from './Header.module.scss';
 
 const Header = () => {
@@ -22,6 +22,17 @@ const Header = () => {
             <Nav.Link href="/search" className={styles.navLink}>
               Search
             </Nav.Link>
+            <NavDropdown
+              title="Anime"
+              id="basic-nav-dropdown"
+              className={styles.dropdown}
+            >
+              <NavDropdown.Item href="/highestRated">
+                Highest Rated
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/airing">Airing</NavDropdown.Item>
+              <NavDropdown.Item href="/upcoming">Upcoming</NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link href="/about" className={styles.navLink}>
               About
             </Nav.Link>

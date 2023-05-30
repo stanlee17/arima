@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { Col, Row } from 'react-bootstrap';
 import styles from './AnimeCard.module.scss';
 
-const AnimeCard = ({ data }) => {
+const AnimeCard = ({ data, numRow }) => {
   return (
     <div>
-      <Row xl={6} lg={5} md={3} xs={1} className="g-5">
+      <Row lg={numRow} md={3} xs={1} className="g-5">
         {data &&
           data.map((anime) => (
             <Col key={anime.mal_id}>

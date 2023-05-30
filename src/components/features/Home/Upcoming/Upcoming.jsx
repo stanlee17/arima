@@ -15,11 +15,11 @@ const Upcoming = ({ upcoming }) => {
           <h2>
             <span>U</span>pcoming
           </h2>
-          <Link href="/search" className={styles.viewAll}>
+          <Link href="/upcoming" className={styles.viewAll}>
             View All
           </Link>
         </div>
-        <AnimeCard data={data} />
+        <AnimeCard data={data} numRow="6" />
       </div>
     </Container>
   );

@@ -28,4 +28,9 @@
       color: $primaryColor;
     }
   }
+
+  & .dropdown {
+    margin-right: 2rem;
+    font-weight: bold;
+  }
 }

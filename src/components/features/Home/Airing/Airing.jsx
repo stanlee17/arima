@@ -13,11 +13,11 @@ const Airing = ({ airing }) => {
           <h2>
             <span>A</span>iring
           </h2>
-          <Link href="/search" className={styles.viewAll}>
+          <Link href="/airing" className={styles.viewAll}>
             View All
           </Link>
         </div>
-        <AnimeCard data={data} />
+        <AnimeCard data={data} numRow="6" />
       </div>
     </Container>
   );
