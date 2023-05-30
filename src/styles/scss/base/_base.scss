@@ -16,6 +16,26 @@ a {
   color: $whiteColor;
 }
 
+p {
+  color: $textColor;
+}
+
 a:hover {
   color: $whiteColor;
+}
+
+/* width */
+::-webkit-scrollbar {
+  max-width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #171d2f;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #45507a;
+  border-radius: 10rem;
 }

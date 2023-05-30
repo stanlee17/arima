@@ -10,8 +10,15 @@
 }
 
 @mixin underline-heading {
-  padding-bottom: 0.3rem;
-  border-bottom: 3px solid $primaryColor;
+  font-weight: bold;
   display: inline-block;
-  margin-bottom: 1rem;
+
+  &::after {
+    content: '';
+    display: block;
+    max-width: 30%;
+    border-radius: 50px;
+    margin-top: 0.5rem;
+    border-top: 3px solid $primaryColor;
+  }
 }
