@@ -22,6 +22,10 @@ a:hover {
   color: #ffffff;
 }
 
+.container {
+  padding: 0 1.5rem;
+}
+
 /* width */
 ::-webkit-scrollbar {
   max-width: 6px;

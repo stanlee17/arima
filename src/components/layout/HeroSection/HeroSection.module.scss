@@ -13,7 +13,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    max-width: 45vw;
+    z-index: 50;
+    max-width: 60%;
     min-height: 100vh;
 
     & h1 {
@@ -47,10 +48,10 @@
     top: 0;
     right: 0;
     border-bottom-left-radius: 3.125rem;
-    min-width: 35vw;
+    min-width: 35%;
     background-image: linear-gradient(
         rgba(15, 20, 30, 0.8),
-        rgba(15, 20, 30, 0.5)
+        rgba(15, 20, 30, 0.8)
       ),
       url('../../../../public/backgrounds/hero-bg.webp');
     background-repeat: no-repeat;
@@ -58,5 +59,47 @@
     background-size: cover;
     min-height: 100vh;
     object-fit: cover;
+  }
+
+  @include devices(laptop) {
+    &Image {
+      min-width: 35%;
+    }
+
+    & .content {
+      & h1 {
+        font-size: 2.8rem;
+      }
+    }
+  }
+
+  @include devices(tablet) {
+    &Image {
+      min-width: 100%;
+      background-image: linear-gradient(
+          rgba(15, 20, 30, 0.9),
+          rgba(15, 20, 30, 0.9)
+        ),
+        url('../../../../public/backgrounds/hero-bg.webp');
+    }
+
+    & .content {
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  @include devices(mobile) {
+    & .content {
+      & h1 {
+        font-size: 2.5rem;
+      }
+
+      & p {
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+    }
   }
 }

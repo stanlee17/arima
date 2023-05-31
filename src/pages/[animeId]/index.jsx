@@ -39,7 +39,7 @@ const AnimeDetailPage = () => {
     anime && (
       <Fragment>
         <Head>
-          <title>Arima | Anime Details</title>
+          <title>Arima | {anime.data.title}</title>
           <meta name="description" description="Anime details" />
         </Head>
         <AnimeDetails anime={anime.data} characters={characters.data} />

@@ -29,8 +29,31 @@
     }
   }
 
-  & .dropdown {
+  & #dropdown {
     margin-right: 2rem;
     font-weight: bold;
+    color: $whiteColor;
+    transition: all 0.5s;
+
+    & + div {
+      border: none;
+      background-color: #2c344d;
+    }
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+
+  & .dropdownItem {
+    color: $whiteColor;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transition: all 0.5s;
+
+    &:hover {
+      color: $whiteColor;
+      background-color: #3e4a6d;
+    }
   }
 }

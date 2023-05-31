@@ -1,5 +1,26 @@
 @use './variables' as *;
 
+// ---------MEDIA QUERIES---------
+@mixin devices($breakpoint) {
+  @if $breakpoint == laptop {
+    @media only screen and (max-width: 1400px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 500px) {
+      @content;
+    }
+  }
+}
+
 @mixin arima-link {
   display: inline-block;
   transition: all 0.5s;

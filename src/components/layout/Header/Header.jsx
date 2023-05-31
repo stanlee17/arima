@@ -1,13 +1,36 @@
+import { useState, useEffect } from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import styles from './Header.module.scss';
 
+const inlineStyle = {
+  navbar: {
+    backgroundColor: '#171d2f',
+    transition: 'background-color .7s ease-out',
+  },
+};
+
 const Header = () => {
+  const [bgColor, setBgColor] = useState(false);
+
+  const changeColor = () => {
+    if (window.scrollY >= 100) {
+      setBgColor(true);
+    } else {
+      setBgColor(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeColor);
+  }, []);
+
   return (
     <Navbar
       expand="lg"
       variant="dark"
       fixed="top"
       className={`py-4 ${styles.navbar}`}
+      style={bgColor ? inlineStyle.navbar : {}}
     >
       <Container>
         <Navbar.Brand href="/" className={styles.navbarBrand}>
@@ -22,16 +45,22 @@ const Header = () => {
             <Nav.Link href="/search" className={styles.navLink}>
               Search
             </Nav.Link>
-            <NavDropdown
-              title="Anime"
-              id="basic-nav-dropdown"
-              className={styles.dropdown}
-            >
-              <NavDropdown.Item href="/highestRated">
+            <NavDropdown title="Anime" id={styles.dropdown}>
+              <NavDropdown.Item
+                href="/highestRated"
+                className={styles.dropdownItem}
+              >
                 Highest Rated
               </NavDropdown.Item>
-              <NavDropdown.Item href="/airing">Airing</NavDropdown.Item>
-              <NavDropdown.Item href="/upcoming">Upcoming</NavDropdown.Item>
+              <NavDropdown.Item href="/airing" className={styles.dropdownItem}>
+                Airing
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                href="/upcoming"
+                className={styles.dropdownItem}
+              >
+                Upcoming
+              </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/about" className={styles.navLink}>
               About

@@ -7,16 +7,16 @@ const AnimeCard = ({ data }) => {
   return (
     data && (
       <div>
-        <Row lg="5" md={3} xs={1} className="g-5">
+        <Row xxl={6} lg={6} xs={3} className="g-4">
           {data &&
             data.map((anime) => (
               <Col key={anime.mal_id}>
                 <div className={styles.animeCard}>
                   <Link href={`/${anime.mal_id}`}>
                     <Image
-                      src={anime.images.webp.large_image_url}
-                      width={220}
-                      height={310}
+                      src={anime.images.webp.image_url}
+                      width={175}
+                      height={275}
                       priority={true}
                       alt={anime.title}
                     />

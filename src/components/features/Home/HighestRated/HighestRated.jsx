@@ -17,7 +17,7 @@ const HighestRated = ({ highestRated }) => {
             View All
           </Link>
         </div>
-        <AnimeCard data={data} numRow="6" />
+        <AnimeCard data={data} />
       </div>
     </Container>
   );
