@@ -1,12 +1,10 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
+import { apiBaseUrl } from '@/api/api';
 import HeroSection from '@/components/layout/HeroSection/HeroSection';
-
 import HighestRated from '@/components/features/Home/HighestRated/HighestRated';
 import Airing from '@/components/features/Home/Airing/Airing';
 import Upcoming from '@/components/features/Home/Upcoming/Upcoming';
-
-import { apiBaseUrl } from '@/api/api';
 
 const HomePage = ({ upcoming, highestRated, airing }) => {
   return (

@@ -12,7 +12,7 @@ const AnimeCard = ({ data }) => {
             data.map((anime) => (
               <Col key={anime.mal_id}>
                 <div className={styles.animeCard}>
-                  <Link href={`/${anime.mal_id}`}>
+                  <Link href={`/anime/${anime.mal_id}`}>
                     <Image
                       src={anime.images.webp.image_url}
                       width={175}

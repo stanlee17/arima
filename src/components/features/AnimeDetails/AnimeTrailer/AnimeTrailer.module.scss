@@ -12,4 +12,10 @@
     border-radius: 10px;
     min-height: 250px;
   }
+
+  @include devices(tablet) {
+    & .trailer {
+      min-width: 100%;
+    }
+  }
 }

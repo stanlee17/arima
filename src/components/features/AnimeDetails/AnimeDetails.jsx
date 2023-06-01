@@ -7,12 +7,14 @@ import AnimeContent from './AnimeContent/AnimeContent';
 
 const AnimeDetails = ({ anime, characters }) => {
   return (
-    <Container>
-      <div className={styles.animeDetails}>
-        <AnimeInfo anime={anime} />
-        <AnimeContent anime={anime} characters={characters} />
-      </div>
-    </Container>
+    anime && (
+      <Container>
+        <div className={styles.animeDetails}>
+          <AnimeInfo anime={anime} />
+          <AnimeContent anime={anime} characters={characters} />
+        </div>
+      </Container>
+    )
   );
 };
 

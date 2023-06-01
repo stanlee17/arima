@@ -17,7 +17,7 @@ const AnimeCharacters = ({ characters }) => {
     characters && (
       <div className={styles.characters}>
         <h5>Characters</h5>
-        <Row lg={3} md={3} xs={1} className="g-4">
+        <Row lg={3} xs={1} className="g-4">
           {characters.slice(0, 6).map((character) => (
             <Col key={character.character.mal_id}>
               <Link href={character.character.url} target="_blank">

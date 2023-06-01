@@ -17,7 +17,6 @@ function Footer() {
               Arima
             </Link>
             <div className={styles.links}>
-              <Link href="/">Home</Link>
               <Link href="/search">Search</Link>
               <Link href="/about">About</Link>
               <Link href="/contact">Contact</Link>

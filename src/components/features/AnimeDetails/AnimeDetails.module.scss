@@ -3,4 +3,9 @@
 .animeDetails {
   display: flex;
   margin: 10rem 0;
+
+  @include devices(tablet) {
+    flex-direction: column;
+    margin: 9rem 0;
+  }
 }

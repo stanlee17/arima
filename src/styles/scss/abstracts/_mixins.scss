@@ -38,7 +38,8 @@
 }
 
 @mixin arima-button($borderRadius) {
-  padding: 0.8rem 3.5rem;
+  display: inline-block;
+  padding: 1rem 3.5rem;
   color: $whiteColor;
   font-weight: bold;
   border-radius: $borderRadius;
