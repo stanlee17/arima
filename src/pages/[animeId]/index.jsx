@@ -12,7 +12,6 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const AnimeDetailPage = () => {
   const router = useRouter();
   const { animeId } = router.query;
-  console.log(animeId);
 
   const {
     data: anime,
@@ -47,5 +46,14 @@ const AnimeDetailPage = () => {
     )
   );
 };
+
+// export const getServerSideProps = async (context) => {
+//   const animeId = context.params.animeId;
+
+//   console.log(animeId);
+//   return {
+//     props: {},
+//   };
+// };
 
 export default AnimeDetailPage;

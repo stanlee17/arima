@@ -30,6 +30,22 @@
   }
 }
 
+@mixin arima-input {
+  color: $textColor;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  background-color: $bgOverlayColor;
+}
+
+@mixin arima-button($borderRadius) {
+  padding: 0.8rem 3.5rem;
+  color: $whiteColor;
+  font-weight: bold;
+  border-radius: $borderRadius;
+  border: none;
+  background-color: $primaryColor;
+}
+
 @mixin underline-heading {
   font-weight: bold;
   display: inline-block;

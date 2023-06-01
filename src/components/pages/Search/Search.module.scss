@@ -19,11 +19,8 @@
     max-width: 50%;
 
     & .input {
-      color: $textColor;
-      border: none;
-      padding: 0.8rem 1.2rem;
+      @include arima-input;
       margin-bottom: 4rem;
-      background-color: $bgOverlayColor;
     }
   }
 

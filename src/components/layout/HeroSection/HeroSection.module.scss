@@ -35,12 +35,8 @@
   }
 
   .button {
-    padding: 0.8rem 3.5rem;
-    color: $whiteColor;
-    font-weight: bold;
-    border-radius: 20rem;
+    @include arima-button(20rem);
     text-decoration: none;
-    background-color: $primaryColor;
   }
 
   &Image {
