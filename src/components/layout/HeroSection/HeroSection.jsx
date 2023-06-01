@@ -1,3 +1,4 @@
+import { Link } from 'react-scroll';
 import styles from './HeroSection.module.scss';
 import { Container } from 'react-bootstrap';
 
@@ -17,7 +18,16 @@ const HeroSection = () => {
                 exercitationem ratione dolorem mollitia officia nobis? Impedit
                 dolores iusto maxime quisquam voluptates error esse?
               </p>
-              <a className={styles.button}>Discover</a>
+              <Link
+                to="airing"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={0}
+                className={styles.button}
+              >
+                Discover
+              </Link>
             </div>
             <div className={styles.heroImage}></div>
           </div>

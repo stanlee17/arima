@@ -36,6 +36,7 @@
 
   .button {
     @include arima-button(20rem);
+    cursor: pointer;
     text-decoration: none;
   }
 

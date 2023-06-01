@@ -8,7 +8,7 @@ const Airing = ({ airing }) => {
 
   return (
     <Container>
-      <div className={styles.airing}>
+      <div className={styles.airing} id="airing">
         <div className={styles.heading}>
           <h2>
             <span>A</span>iring
