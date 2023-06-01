@@ -20,7 +20,7 @@ function Footer() {
               <Link href="/search">Search</Link>
               <Link href="/about">About</Link>
               <Link href="/contact">Contact</Link>
-              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/privacy">Privacy</Link>
             </div>
           </div>
           <div className={styles.copyright}>
@@ -35,7 +35,7 @@ function Footer() {
               </Link>
               <Link
                 target="_blank"
-                href="https://www.linkedin.com/in/yves-koesumo-587361169/"
+                href="https://www.linkedin.com/in/yveskoesumo"
                 className={styles.socialMediaLink}
               >
                 <IoLogoLinkedin size={20} />

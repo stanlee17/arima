@@ -1,12 +1,9 @@
 import styles from './About.module.scss';
 import { Container } from 'react-bootstrap';
 
-import PageHeader from '@/components/common/PageHeader/PageHeader';
-
 const About = () => {
   return (
     <div className={styles.about}>
-      <PageHeader heading="About Me" sub="A little introduction about myself" />
       <Container>
         <div className={styles.wrapper}>
           <div className={styles.introduction}>

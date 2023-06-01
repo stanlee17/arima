@@ -1,12 +1,10 @@
 import { Container } from 'react-bootstrap';
 import styles from './Privacy.module.scss';
-import PageHeader from '@/components/common/PageHeader/PageHeader';
 import Link from 'next/link';
 
 const Privacy = () => {
   return (
     <div className={styles.privacy}>
-      <PageHeader heading="Privacy Policy" />
       <Container>
         <div className={styles.wrapper}>
           <div className={styles.privacyPolicy}>

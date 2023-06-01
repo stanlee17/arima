@@ -5,10 +5,6 @@ import styles from './Contact.module.scss';
 const Contact = () => {
   return (
     <div className={styles.contact}>
-      <PageHeader
-        heading="Contact Me"
-        sub="Please leave a message for any inquiries or questions"
-      />
       <Container>
         <div className={styles.wrapper}>
           <Form>

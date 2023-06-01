@@ -31,7 +31,8 @@
 
   @include devices(mobile) {
     & img {
-      max-height: 180px;
+      max-width: 70px;
+      max-height: 200px;
     }
 
     & .animeLink {

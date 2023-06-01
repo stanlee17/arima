@@ -7,7 +7,7 @@ const AnimeCard = ({ data }) => {
   return (
     data && (
       <div>
-        <Row xxl={6} lg={6} xs={3} className="g-4">
+        <Row xxl={6} lg={6} md={3} xs={2} className="g-4">
           {data &&
             data.map((anime) => (
               <Col key={anime.mal_id}>
@@ -21,7 +21,10 @@ const AnimeCard = ({ data }) => {
                       alt={anime.title}
                     />
                   </Link>
-                  <Link href={`/${anime.mal_id}`} className={styles.animeLink}>
+                  <Link
+                    href={`/anime/${anime.mal_id}`}
+                    className={styles.animeLink}
+                  >
                     {anime.title}
                   </Link>
                 </div>

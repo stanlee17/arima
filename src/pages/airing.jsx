@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
 import { apiBaseUrl } from '@/api/api';
-import KanaArima from '@/../public/backgrounds/arima_kana.jpg';
+import KanaArima from '@/../public/backgrounds/kana_arima.webp';
 
 // Import reuseable components
 import PageHeader from '@/components/common/PageHeader/PageHeader';

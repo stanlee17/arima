@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
+import Memcho from '@/../public/backgrounds/memcho.webp';
 import { apiBaseUrl } from '@/api/api';
 
 // Import reuseable components
@@ -18,6 +19,7 @@ const HighestRatedPage = ({ data }) => {
       <PageHeader
         heading="Highest Rated"
         sub="A list of the highest rated Anime of all time"
+        background={Memcho}
       />
       <HighestRated data={data.data} />
     </Fragment>
