@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
 import { apiBaseUrl } from '@/api/api';
+import KanaArima from '@/../public/backgrounds/arima_kana.jpg';
 
 // Import reuseable components
 import PageHeader from '@/components/common/PageHeader/PageHeader';
@@ -18,6 +19,7 @@ const AiringPage = ({ data }) => {
       <PageHeader
         heading="Currently Airing"
         sub="Currently airing anime this season"
+        background={KanaArima}
       />
       <Airing data={data.data} />
     </Fragment>
@@ -25,7 +27,7 @@ const AiringPage = ({ data }) => {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${apiBaseUrl}/seasons/now`);
+  const res = await fetch(`${apiBaseUrl}/seasons/now?limit=24`);
   const data = await res.json();
 
   return {

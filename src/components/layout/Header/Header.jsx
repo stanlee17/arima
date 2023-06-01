@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import styles from './Header.module.scss';
 
@@ -39,33 +40,39 @@ const Header = () => {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Nav>
-            <Nav.Link href="/" className={styles.navLink}>
+            <Nav.Link as={Link} href="/" className={styles.navLink}>
               Home
             </Nav.Link>
-            <Nav.Link href="/search" className={styles.navLink}>
+            <Nav.Link as={Link} href="/search" className={styles.navLink}>
               Search
             </Nav.Link>
             <NavDropdown title="Anime" id={styles.dropdown}>
               <NavDropdown.Item
+                as={Link}
                 href="/highestRated"
                 className={styles.dropdownItem}
               >
                 Highest Rated
               </NavDropdown.Item>
-              <NavDropdown.Item href="/airing" className={styles.dropdownItem}>
+              <NavDropdown.Item
+                as={Link}
+                href="/airing"
+                className={styles.dropdownItem}
+              >
                 Airing
               </NavDropdown.Item>
               <NavDropdown.Item
+                as={Link}
                 href="/upcoming"
                 className={styles.dropdownItem}
               >
                 Upcoming
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="/about" className={styles.navLink}>
+            <Nav.Link as={Link} href="/about" className={styles.navLink}>
               About
             </Nav.Link>
-            <Nav.Link href="/contact" className={styles.navLink}>
+            <Nav.Link as={Link} href="/contact" className={styles.navLink}>
               Contact
             </Nav.Link>
           </Nav>

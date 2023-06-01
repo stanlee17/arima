@@ -2,10 +2,75 @@
 
 .footer {
   background: $footerColor;
-  text-align: center;
+
+  & .wrapper {
+    padding: 2rem 0;
+  }
+
+  & .linkWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & .logo {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    &::first-letter {
+      color: $primaryColor;
+    }
+  }
+
+  & .links {
+    display: flex;
+
+    & a {
+      @include arima-link;
+    }
+
+    & a:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  & .copyright {
+    text-align: center;
+    padding-top: 3rem;
+    font-size: 0.9rem;
+  }
+
+  & .socialMedia {
+    margin-top: 0.5rem;
+
+    &Link {
+      @include arima-link;
+      color: $textColor;
+    }
+
+    &Link:not(:last-of-type) {
+      padding-right: 0.6rem;
+    }
+  }
 
   & p {
-    padding: 1rem 0;
     margin: 0;
+  }
+
+  @include devices(tablet) {
+    & .linkWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: baseline;
+
+      & .logo {
+        text-align: center;
+      }
+
+      & .links {
+        margin: 0 auto;
+        margin-top: 1.5rem;
+      }
+    }
   }
 }

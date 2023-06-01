@@ -25,7 +25,7 @@ const HighestRatedPage = ({ data }) => {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${apiBaseUrl}/top/anime`);
+  const res = await fetch(`${apiBaseUrl}/top/anime?limit=24`);
   const data = await res.json();
 
   return {

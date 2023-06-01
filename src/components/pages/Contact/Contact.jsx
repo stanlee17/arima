@@ -6,7 +6,7 @@ const Contact = () => {
     <div>
       <PageHeader
         heading="Contact Me"
-        sub="Please leave a message for any inquiries or questions "
+        sub="Please leave a message for any inquiries or questions"
       />
       <Container>
         <Form>

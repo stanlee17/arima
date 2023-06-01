@@ -18,20 +18,19 @@
 
   @include devices(laptop) {
     & img {
-      max-width: 120px;
-      max-height: 220px;
+      max-width: 125px;
+      max-height: 180px;
     }
   }
 
   @include devices(tablet) {
     & img {
-      max-height: 225px;
+      max-height: 200px;
     }
   }
 
   @include devices(mobile) {
     & img {
-      max-width: 50px;
       max-height: 180px;
     }
 

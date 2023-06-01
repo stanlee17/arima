@@ -1,8 +1,13 @@
 import styles from './PageHeader.module.scss';
 
-const PageHeader = ({ heading, sub }) => {
+const PageHeader = ({ heading, sub, background }) => {
   return (
-    <div className={styles.pageHeader}>
+    <div
+      className={styles.pageHeader}
+      style={{
+        backgroundImage: `url(${background})`,
+      }}
+    >
       <div className={styles.content}>
         <h1>{heading}</h1>
         <p>{sub}</p>
