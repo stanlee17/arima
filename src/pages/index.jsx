@@ -45,7 +45,7 @@ export const getStaticProps = async () => {
       highestRated,
       airing,
     },
-    revalidate: 10,
+    revalidate: 60,
   };
 };
 
