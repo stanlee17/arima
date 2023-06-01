@@ -39,7 +39,7 @@ module.exports = (phase) => {
       if (isDev) return 'http://localhost:3000/';
       if (isProd) return 'https://arima.vercel.app/';
     })(),
-    // NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
+    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
   };
 
   // Next.config is an object
