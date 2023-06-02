@@ -1,11 +1,25 @@
 import { Fragment } from 'react';
 import Script from 'next/script';
 import Layout from '@/components/layout';
+import * as ga from '@/lib/google-analytics';
+import { useRouter } from 'next/router';
 import { SSRProvider } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/styles/globals.css';
 
 function App({ Component, pageProps }) {
+  // C. SETUP OF GA PAGE VIEWS
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <Fragment>
       {/* GA TAGS */}
