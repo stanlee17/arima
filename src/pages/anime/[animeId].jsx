@@ -31,6 +31,13 @@ export const getServerSideProps = async (context) => {
     charactersRes.json(),
   ]);
 
+  if (!animeRes.ok || !charactersRes.ok) {
+    console.log('ddwdw');
+    throw new Error(
+      `Failed to fetch posts - Error ${res.status}: ${anime.message}`
+    );
+  }
+
   // Check if anime exist
   if (anime.status === 404) {
     return {

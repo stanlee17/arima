@@ -27,7 +27,6 @@ export const getStaticProps = async () => {
   const data = await res.json();
 
   if (!res.ok) {
-    console.log(data);
     throw new Error(
       `Failed to fetch posts - Error ${res.status}: ${data.message}`
     );
