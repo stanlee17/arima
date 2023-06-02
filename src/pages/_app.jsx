@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import Script from 'next/script';
 import Layout from '@/components/layout';
 import * as ga from '@/lib/google-analytics';
