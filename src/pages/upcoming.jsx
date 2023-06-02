@@ -26,10 +26,18 @@ export const getStaticProps = async () => {
   const res = await fetch(`${apiBaseUrl}/seasons/upcoming?limit=24`);
   const data = await res.json();
 
+  if (!res.ok) {
+    console.log(data);
+    throw new Error(
+      `Failed to fetch posts - Error ${res.status}: ${data.message}`
+    );
+  }
+
   return {
     props: {
       data,
     },
+    revalidate: 60 * 10,
   };
 };
 
