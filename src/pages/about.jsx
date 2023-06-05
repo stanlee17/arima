@@ -9,7 +9,10 @@ const AboutPage = () => {
     <Fragment>
       <Head>
         <title>Arima | About Me</title>
-        <meta name="description" description="About page" />
+        <meta
+          name="description"
+          description="An introduction of me, Yves Koesumo, the creator of Arima to learn about my passion for Anime, web development, etc."
+        />
       </Head>
       <PageHeader
         heading="About Me"

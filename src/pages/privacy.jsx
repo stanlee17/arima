@@ -9,7 +9,10 @@ const PrivacyPage = () => {
     <Fragment>
       <Head>
         <title>Arima | Privacy Policy</title>
-        <meta name="description" description="privacy policy" />
+        <meta
+          name="description"
+          description="Please read our privacy policy carefully if you want to know what kind of information are we collecting from you if you sign up to our website."
+        />
       </Head>
       <PageHeader heading="Privacy Policy" background={Ruby} />
       <Privacy />

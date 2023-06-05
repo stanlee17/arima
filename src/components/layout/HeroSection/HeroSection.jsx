@@ -10,13 +10,14 @@ const HeroSection = () => {
           <div className={styles.wrapper}>
             <div className={styles.content}>
               <h1>
-                Welcome to <span>Arima</span>
+                Find, Discover and Stay Updated on <span>Arima</span>
               </h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-                voluptates necessitatibus sequi neque, aperiam porro deserunt,
-                exercitationem ratione dolorem mollitia officia nobis? Impedit
-                dolores iusto maxime quisquam voluptates error esse?
+                Welcome to Arima, where you can effortlessly find and discover a
+                vast collection of anime. Whether you are a weeb or just
+                starting out, our comprehensive database provides detailed
+                information such as the number of episodes, characters, trailer,
+                airing schedules, and much more!
               </p>
               <Link
                 to="airing"

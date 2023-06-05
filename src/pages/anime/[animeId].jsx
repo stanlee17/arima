@@ -9,7 +9,7 @@ const AnimeDetailPage = ({ anime, characters }) => {
       <Fragment>
         <Head>
           <title>Arima | {anime.data.title}</title>
-          <meta name="description" description="Anime details" />
+          <meta name="description" description={anime.data.synopsis} />
         </Head>
         <AnimeDetails anime={anime.data} characters={characters.data} />
       </Fragment>

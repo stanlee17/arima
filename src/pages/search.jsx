@@ -7,8 +7,11 @@ const SearchPage = ({ anime }) => {
   return (
     <Fragment>
       <Head>
-        <title>Arima | Anime Search</title>
-        <meta name="description" description="Search Anime" />
+        <title>Arima | Search Anime</title>
+        <meta
+          name="description"
+          description="Search any anime that you want and it will give the exact Anime that you are looking for."
+        />
       </Head>
       <Search anime={anime} />
     </Fragment>

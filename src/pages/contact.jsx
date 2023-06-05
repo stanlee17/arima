@@ -8,8 +8,11 @@ const ContactPage = () => {
   return (
     <Fragment>
       <Head>
-        <title>Arima | Contact Me</title>
-        <meta name="description" description="contact page" />
+        <title>Arima | Contact Us</title>
+        <meta
+          name="description"
+          description="Get in touch with us. Reach out for inquiries, feedback or collaborations. We value of input and are ready to assist you on any matter."
+        />
       </Head>
       <PageHeader
         heading="Contact Me"

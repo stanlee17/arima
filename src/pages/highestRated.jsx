@@ -13,8 +13,11 @@ const HighestRatedPage = ({ data }) => {
   return (
     <Fragment>
       <Head>
-        <title>Arima | Highest Rated</title>
-        <meta name="description" description="Highest rated anime" />
+        <title>Arima | Highest Rated Anime</title>
+        <meta
+          name="description"
+          description="A complete list of top-rated Anime. It will sort by rankings, meaning that the first anime on the list is the best of the best Anime of all time."
+        />
       </Head>
       <PageHeader
         heading="Highest Rated"
