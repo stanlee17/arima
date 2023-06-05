@@ -5,7 +5,8 @@ export default function Document() {
     <Html lang="en" style={{ scrollBehavior: 'smooth' }}>
       <Head
         name="description"
-        description="Experience the ultimate anime info on Arima. Discover a vast collection of captivating anime series, stay updated on the latest releases, newly top-rated and upcoming Anime on Arima."
+        content="Experience the ultimate anime info on Arima. Discover a vast collection of captivating anime series, stay updated on the latest releases, newly top-rated and upcoming Anime on Arima."
+        key="desc"
       />
       <body>
         <Main />

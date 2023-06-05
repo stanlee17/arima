@@ -16,7 +16,8 @@ const AiringPage = ({ data }) => {
         <title>Arima | Currenty Airing Anime</title>
         <meta
           name="description"
-          description="Discover the currently airing Anime on Arima. Navigate through this page and find your newly favorited Anime that are airing this season, or find the new hidden gem Anime that you are looking to watch."
+          content="Discover the currently airing Anime on Arima. Navigate through this page and find your newly favorited Anime that are airing this season, or find the new hidden gem Anime that you are looking to watch."
+          key="desc"
         />
       </Head>
       <PageHeader

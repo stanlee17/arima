@@ -11,7 +11,8 @@ const AboutPage = () => {
         <title>Arima | About Me</title>
         <meta
           name="description"
-          description="An introduction of me, Yves Koesumo, the creator of Arima to learn about my passion for Anime, web development, etc."
+          content="An introduction of me, Yves Koesumo, the creator of Arima to learn about my passion for Anime, web development, etc."
+          key="desc"
         />
       </Head>
       <PageHeader

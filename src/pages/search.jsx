@@ -10,7 +10,8 @@ const SearchPage = ({ anime }) => {
         <title>Arima | Search Anime</title>
         <meta
           name="description"
-          description="Search any anime that you want and it will give the exact Anime that you are looking for."
+          content="Search any anime that you want and it will give the exact Anime that you are looking for."
+          key="desc"
         />
       </Head>
       <Search anime={anime} />

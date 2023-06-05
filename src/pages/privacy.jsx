@@ -11,7 +11,8 @@ const PrivacyPage = () => {
         <title>Arima | Privacy Policy</title>
         <meta
           name="description"
-          description="Please read our privacy policy carefully if you want to know what kind of information are we collecting from you if you sign up to our website."
+          content="Please read our privacy policy carefully if you want to know what kind of information are we collecting from you if you sign up to our website."
+          key="desc"
         />
       </Head>
       <PageHeader heading="Privacy Policy" background={Ruby} />

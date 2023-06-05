@@ -13,7 +13,8 @@ const HomePage = ({ upcoming, highestRated, airing }) => {
         <title>Arima | Home</title>
         <meta
           name="description"
-          description="Discover top-rated, upcoming, currently airing anime shows through trailers, reviews and recommendations on Arima."
+          content="Discover top-rated, upcoming, currently airing anime shows through trailers, reviews and recommendations on Arima."
+          key="desc"
         />
       </Head>
       <HeroSection />

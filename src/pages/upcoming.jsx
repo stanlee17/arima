@@ -12,7 +12,8 @@ const UpcomingPage = ({ data }) => {
         <title>Arima | Upcoming Anime</title>
         <meta
           name="description"
-          description="Discover the latest upcoming anime releases, seasons and highly anticipated Anime series with Arima. Stay ahead of the anime curve and be the first to experience captivating stories and stunning animation."
+          content="Discover the latest upcoming anime releases, seasons and highly anticipated Anime series with Arima. Stay ahead of the anime curve and be the first to experience captivating stories and stunning animation."
+          key="desc"
         />
       </Head>
       <PageHeader

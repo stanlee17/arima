@@ -16,7 +16,8 @@ const HighestRatedPage = ({ data }) => {
         <title>Arima | Highest Rated Anime</title>
         <meta
           name="description"
-          description="A complete list of top-rated Anime. It will sort by rankings, meaning that the first anime on the list is the best of the best Anime of all time."
+          content="A complete list of top-rated Anime. It will sort by rankings, meaning that the first anime on the list is the best of the best Anime of all time."
+          key="desc"
         />
       </Head>
       <PageHeader

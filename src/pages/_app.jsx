@@ -39,7 +39,8 @@ function App({ Component, pageProps }) {
       </Script>
       <Head
         name="description"
-        description="Experience the ultimate anime hub on Arima. Discover a vast collection of captivating anime series, stay updated on the latest releases, newly top-rated and upcoming Anime on Arima."
+        content="Experience the ultimate anime hub on Arima. Discover a vast collection of captivating anime series, stay updated on the latest releases, newly top-rated and upcoming Anime on Arima."
+        key="desc"
       />
       <SSRProvider>
         <Layout>
