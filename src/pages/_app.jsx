@@ -1,5 +1,6 @@
 import { Fragment, useEffect } from 'react';
 import Script from 'next/script';
+import Head from 'next/head';
 import Layout from '@/components/layout';
 import * as ga from '@/lib/google-analytics';
 import { useRouter } from 'next/router';
@@ -36,6 +37,10 @@ function App({ Component, pageProps }) {
           gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
         `}
       </Script>
+      <Head
+        name="description"
+        description="Experience the ultimate anime hub on Arima. Discover a vast collection of captivating anime series, stay updated on the latest releases, newly top-rated and upcoming Anime on Arima."
+      />
       <SSRProvider>
         <Layout>
           <Component {...pageProps} />
