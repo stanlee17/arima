@@ -26,15 +26,20 @@ const AiringPage = ({ data }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch(`${apiBaseUrl}/seasons/now?limit=24`);
   const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(
+      `Failed to fetch posts - Error ${res.status}: ${data.message}`
+    );
+  }
 
   return {
     props: {
       data,
     },
-    revalidate: 60 * 10,
   };
 };
 

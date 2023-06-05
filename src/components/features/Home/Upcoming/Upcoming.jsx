@@ -19,7 +19,13 @@ const Upcoming = ({ upcoming }) => {
             View All
           </Link>
         </div>
-        <AnimeCard data={data} numRow="6" />
+        {data ? (
+          <AnimeCard data={data} />
+        ) : (
+          <div>
+            <p>Failed to fetch the data, please reload the page again.</p>
+          </div>
+        )}
       </div>
     </Container>
   );

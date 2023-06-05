@@ -22,7 +22,7 @@ const UpcomingPage = ({ data }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch(`${apiBaseUrl}/seasons/upcoming?limit=24`);
   const data = await res.json();
 
@@ -36,7 +36,6 @@ export const getStaticProps = async () => {
     props: {
       data,
     },
-    revalidate: 60 * 10,
   };
 };
 
