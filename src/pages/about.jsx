@@ -17,7 +17,7 @@ const AboutPage = () => {
       </Head>
       <PageHeader
         heading="About Me"
-        sub="A little introduction about myself"
+        sub="A little introduction about me"
         background={Aqua}
       />
       <About />
