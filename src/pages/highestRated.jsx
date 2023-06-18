@@ -25,14 +25,22 @@ const HighestRatedPage = ({ data }) => {
         sub="A list of the highest rated Anime of all time"
         background={Memcho}
       />
-      <HighestRated data={data.data} />
+      <HighestRated data={data} />
     </Fragment>
   );
 };
 
-export const getServerSideProps = async () => {
-  const res = await fetch(`${apiBaseUrl}/top/anime?limit=24`);
+export const getServerSideProps = async ({ query }) => {
+  console.log(query.page);
+  let res;
+  if (query.page) {
+    res = await fetch(`${apiBaseUrl}/top/anime?limit=24&page=${query.page}`);
+  } else {
+    res = await fetch(`${apiBaseUrl}/top/anime?limit=24`);
+  }
+
   const data = await res.json();
+  console.log(data);
 
   if (!res.ok) {
     throw new Error(

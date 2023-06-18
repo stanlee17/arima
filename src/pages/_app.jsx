@@ -8,6 +8,8 @@ import { SSRProvider } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/styles/globals.css';
 
+import PaginationProvider from '@/contexts/PaginationContext';
+
 function App({ Component, pageProps }) {
   // C. SETUP OF GA PAGE VIEWS
   const router = useRouter();
@@ -42,10 +44,13 @@ function App({ Component, pageProps }) {
         content="Experience the ultimate anime hub on Arima. Discover a vast collection of captivating anime series, stay updated on the latest releases, newly top-rated and upcoming Anime on Arima."
         key="desc"
       />
+
       <SSRProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <PaginationProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </PaginationProvider>
       </SSRProvider>
     </Fragment>
   );

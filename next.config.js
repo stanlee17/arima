@@ -1,12 +1,3 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   reactStrictMode: true,
-//   images: {
-//     domains: ['cdn.myanimelist.net'],
-//   },
-// };
-
-// module.exports = nextConfig;
 const {
   PHASE_DEVELOPMENT_SERVER,
   PHASE_PRODUCTION_BUILD,
