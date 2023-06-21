@@ -51,6 +51,17 @@
   }
 }
 
+.pageItemDisabled {
+  @extend %pageBox;
+
+  .pageLink {
+    border: solid black 1px;
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: #fff;
+  }
+}
+
 .pageItem {
   @extend %pageBox;
 

@@ -1,39 +1,93 @@
 import styles from './Pagination.module.scss';
 import lodash from 'lodash';
 
+const getPagesCut = ({ pagesCount, pagesCutCount, currentPage }) => {
+  const ceiling = Math.ceil(pagesCutCount / 2);
+  const floor = Math.floor(pagesCutCount / 2);
+  console.log(ceiling, 'ceiling');
+  console.log(floor, 'floor');
+
+  if (pagesCount < pagesCutCount) {
+    return {
+      start: 1,
+      end: pagesCount + 1,
+    };
+  } else if (currentPage >= 1 && currentPage <= ceiling) {
+    return { start: 1, end: pagesCutCount + 1 };
+  } else if (currentPage + floor >= pagesCount) {
+    return { start: pagesCount - pagesCutCount + 1, end: pagesCount + 1 };
+  } else {
+    return { start: currentPage - ceiling + 1, end: currentPage + floor + 1 };
+  }
+};
+
+const PaginationItem = ({ page, currentPage, onPageChange, isDisabled }) => {
+  function liClasses(page, currentPage, isDisabled) {
+    if (page === currentPage) return styles.pageItemActive;
+    else if (isDisabled) return styles.pageItemDisabled;
+    return styles.pageItem;
+  }
+  return (
+    <li key={page} className={liClasses(page, currentPage, isDisabled)}>
+      <button className={styles.pageLink} onClick={() => onPageChange(page)}>
+        <span className={styles.pageLinkIcon}>{page}</span>
+      </button>
+    </li>
+  );
+};
+
 const Pagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
-  // VALUE: Determine number of pages from items & items per page
-  const pagesCount = Math.ceil(itemsCount / pageSize); // 100/10
+  const pagesCount = Math.ceil(itemsCount / pageSize);
 
-  // VALUE: Generate array of all page numbers needed
-  const pages = lodash.range(1, pagesCount + 1);
+  console.log(currentPage);
 
-  // CONDITIONAL LOAD: Items < items per page
+  const pagesCut = getPagesCut({ pagesCount, pagesCutCount: 5, currentPage });
+  const pages = lodash.range(pagesCut.start, pagesCut.end);
+  const isFirstPage = currentPage === 1;
+  const isLastPage = currentPage === pagesCount;
+
+  console.log(pagesCount);
+
+  // Remove pagination if pagesCount is 1
   if (pagesCount === 1) return null;
 
-  // SUCCESS LOAD: Multiple pages
   return (
-    <>
-      <nav className={styles.pageNav} aria-label="user pagination">
-        <ul className={styles.pagination}>
-          {pages.map((page) => (
-            <li
-              key={page}
-              className={
-                page === currentPage ? styles.pageItemActive : styles.pageItem
-              }
-            >
-              <button
-                className={styles.pageLink}
-                onClick={() => onPageChange(page)}
-              >
-                <span className={styles.pageLinkIcon}>{page}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </>
+    <nav className={styles.pageNav} aria-label="user pagination">
+      <ul className={styles.pagination}>
+        <PaginationItem
+          page="First"
+          currentPage={currentPage}
+          onPageChange={() => onPageChange(1)}
+          isDisabled={isFirstPage}
+        />
+        <PaginationItem
+          page="Prev"
+          currentPage={currentPage}
+          onPageChange={() => onPageChange(currentPage - 1)}
+          isDisabled={isFirstPage}
+        />
+        {pages.map((page) => (
+          <PaginationItem
+            key={page}
+            page={page}
+            currentPage={currentPage}
+            onPageChange={onPageChange}
+          />
+        ))}
+        <PaginationItem
+          page="Next"
+          currentPage={currentPage}
+          onPageChange={() => onPageChange(currentPage + 1)}
+          isDisabled={isLastPage}
+        />
+        <PaginationItem
+          page="Last"
+          currentPage={currentPage}
+          onPageChange={() => onPageChange(pagesCount)}
+          isDisabled={isLastPage}
+        />
+      </ul>
+    </nav>
   );
 };
 

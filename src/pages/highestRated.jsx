@@ -22,7 +22,7 @@ const HighestRatedPage = ({ data }) => {
       </Head>
       <PageHeader
         heading="Highest Rated"
-        sub="A list of the highest rated Anime of all time"
+        sub="Top 100 of the highest rated Anime of all time"
         background={Memcho}
       />
       <HighestRated data={data} />
@@ -31,16 +31,14 @@ const HighestRatedPage = ({ data }) => {
 };
 
 export const getServerSideProps = async ({ query }) => {
-  console.log(query.page);
   let res;
   if (query.page) {
-    res = await fetch(`${apiBaseUrl}/top/anime?limit=24&page=${query.page}`);
+    res = await fetch(`${apiBaseUrl}/top/anime?limit=20&page=${query.page}`);
   } else {
-    res = await fetch(`${apiBaseUrl}/top/anime?limit=24`);
+    res = await fetch(`${apiBaseUrl}/top/anime?limit=20`);
   }
 
   const data = await res.json();
-  console.log(data);
 
   if (!res.ok) {
     throw new Error(

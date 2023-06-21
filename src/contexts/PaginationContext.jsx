@@ -1,9 +1,26 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export const PaginationContext = createContext(null);
 
 const PaginationProvider = ({ children }) => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
+  const [currentPage, setCurrentPage] = useState({
+    highestRated: 1,
+    upcoming: 1,
+    airing: 1,
+  });
+
+  useEffect(() => {
+    if (router.query.page) {
+      setCurrentPage((prevState) => {
+        return {
+          ...prevState,
+          highestRated: Number(router.query.page),
+        };
+      });
+    }
+  }, [router.query.page]);
 
   return (
     <PaginationContext.Provider value={{ currentPage, setCurrentPage }}>
