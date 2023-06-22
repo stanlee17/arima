@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import { Container } from 'react-bootstrap';
 import { PaginationContext } from '@/contexts/PaginationContext';

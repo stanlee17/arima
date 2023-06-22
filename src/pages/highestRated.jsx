@@ -33,9 +33,11 @@ const HighestRatedPage = ({ data }) => {
 export const getServerSideProps = async ({ query }) => {
   let res;
   if (query.page) {
-    res = await fetch(`${apiBaseUrl}/top/anime?limit=20&page=${query.page}`);
+    res = await fetch(
+      `${apiBaseUrl}/top/anime?limit=20&sfw=true&page=${query.page}`
+    );
   } else {
-    res = await fetch(`${apiBaseUrl}/top/anime?limit=20`);
+    res = await fetch(`${apiBaseUrl}/top/anime?limit=20&sfw=true`);
   }
 
   const data = await res.json();

@@ -19,10 +19,12 @@
   align-items: center;
 
   .pageLink {
-    width: 2rem;
-    height: 2rem;
-    border: solid $primaryColor 1px;
-    border-radius: 2px;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background-color: $bgOverlayColor;
+    border-radius: 3px;
+    color: $whiteColor;
     z-index: 0;
     cursor: pointer;
 
@@ -42,11 +44,9 @@
   @extend %pageBox;
 
   .pageLink {
-    border: solid black 1px;
-
     .pageLinkIcon,
     &:hover .pageLinkIcon {
-      color: black;
+      color: $primaryColor;
     }
   }
 }
@@ -55,10 +55,9 @@
   @extend %pageBox;
 
   .pageLink {
-    border: solid black 1px;
+    border: none;
     pointer-events: none;
     cursor: not-allowed;
-    background-color: #fff;
   }
 }
 
@@ -66,11 +65,9 @@
   @extend %pageBox;
 
   .pageLink {
-    border: solid black 1px;
-
     .pageLinkIcon,
     &:hover .pageLinkIcon {
-      color: $primaryColor;
+      color: $whiteColor;
     }
   }
 }

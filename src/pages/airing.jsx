@@ -25,13 +25,20 @@ const AiringPage = ({ data }) => {
         sub="Currently airing anime this season"
         background={KanaArima}
       />
-      <Airing data={data.data} />
+      <Airing data={data} />
     </Fragment>
   );
 };
 
-export const getServerSideProps = async () => {
-  const res = await fetch(`${apiBaseUrl}/seasons/now?limit=24`);
+export const getServerSideProps = async ({ query }) => {
+  let res;
+  if (query.page) {
+    res = await fetch(
+      `${apiBaseUrl}/seasons/now?limit=24&sfw=true&page=${query.page}`
+    );
+  } else {
+    res = await fetch(`${apiBaseUrl}/seasons/now?limit=24&sfw=true`);
+  }
   const data = await res.json();
 
   if (!res.ok) {
