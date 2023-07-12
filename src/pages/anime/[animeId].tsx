@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
+import { GetServerSideProps } from 'next';
 import { apiBaseUrl } from '@/api/api';
 import AnimeDetails from '@/components/features/AnimeDetails/AnimeDetails';
 
@@ -17,7 +18,7 @@ const AnimeDetailPage = ({ anime, characters }) => {
   );
 };
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const animeId = context.params.animeId;
 
   // Multiple fetching of Upcoming, Trending Anime
@@ -32,10 +33,7 @@ export const getServerSideProps = async (context) => {
   ]);
 
   if (!animeRes.ok || !charactersRes.ok) {
-    console.log('ddwdw');
-    throw new Error(
-      `Failed to fetch posts - Error ${res.status}: ${anime.message}`
-    );
+    throw new Error(`Failed to fetch posts anime and or characters`);
   }
 
   // Check if anime exist

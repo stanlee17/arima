@@ -1,12 +1,9 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
+import { GetServerSideProps } from 'next';
 import { apiBaseUrl } from '@/api/api';
-import KanaArima from '@/../public/backgrounds/kana_arima.webp';
-
-// Import reuseable components
+import KanaArima from '../../public/backgrounds/kana_arima.webp';
 import PageHeader from '@/components/common/PageHeader/PageHeader';
-
-// Import pages components
 import Airing from '@/components/pages/Airing/Airing';
 
 const AiringPage = ({ data }) => {
@@ -30,8 +27,8 @@ const AiringPage = ({ data }) => {
   );
 };
 
-export const getServerSideProps = async ({ query }) => {
-  let res;
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  let res: any;
   if (query.page) {
     res = await fetch(
       `${apiBaseUrl}/seasons/now?limit=24&sfw=true&page=${query.page}`

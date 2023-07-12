@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import Ruby from '@/../public/backgrounds/ruby.webp';
+import Ruby from '../../public/backgrounds/ruby.webp';
 import PageHeader from '@/components/common/PageHeader/PageHeader';
 import Privacy from '@/components/pages/Privacy/Privacy';
 
@@ -15,7 +15,7 @@ const PrivacyPage = () => {
           key="desc"
         />
       </Head>
-      <PageHeader heading="Privacy Policy" background={Ruby} />
+      <PageHeader heading="Privacy Policy" sub background={Ruby} />
       <Privacy />
     </Fragment>
   );

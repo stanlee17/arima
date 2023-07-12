@@ -1,12 +1,9 @@
 import { Fragment } from 'react';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import Memcho from '@/../public/backgrounds/memcho.webp';
+import Memcho from '../../public/backgrounds/memcho.webp';
 import { apiBaseUrl } from '@/api/api';
-
-// Import reuseable components
 import PageHeader from '@/components/common/PageHeader/PageHeader';
-
-// Import component pages
 import HighestRated from '@/components/pages/HighestRated/HighestRated';
 
 const HighestRatedPage = ({ data }) => {
@@ -30,8 +27,10 @@ const HighestRatedPage = ({ data }) => {
   );
 };
 
-export const getServerSideProps = async ({ query }) => {
-  let res;
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  let res: any;
+
+  // CONDITIONAL: Fetch new data if page query exist, otherwise fetch the first top 20 anime
   if (query.page) {
     res = await fetch(
       `${apiBaseUrl}/top/anime?limit=20&sfw=true&page=${query.page}`

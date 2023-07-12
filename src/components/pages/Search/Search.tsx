@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { apiBaseUrl } from '@/api/api';
 import { useRouter } from 'next/router';
-import axios from 'axios';
 import styles from './Search.module.scss';
 import { Form } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
@@ -11,7 +9,7 @@ const Search = ({ anime }) => {
   const router = useRouter();
   const [search, setSearch] = useState('');
 
-  const submitHandler = (e) => {
+  const submitHandler = (e: any) => {
     e.preventDefault();
     router.push(`/search?query=${search}`);
   };

@@ -5,7 +5,7 @@ const AnimeTrailer = ({ anime }) => {
   const trailerUrl = anime.trailer.embed_url;
 
   // Disables autoplay parameter in trailer url
-  let disableAutoplay;
+  let disableAutoplay: any;
   if (trailerUrl) {
     disableAutoplay = editUrlParams(trailerUrl, 'autoplay', 0);
   }

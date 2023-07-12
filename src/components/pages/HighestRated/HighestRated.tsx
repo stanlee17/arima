@@ -12,8 +12,8 @@ const HighestRated = ({ data }) => {
   const pageSize = data.pagination.items.per_page;
   const itemsCount = data.pagination.items.total;
 
-  const handlePageChange = (page) => {
-    setCurrentPage((prevState) => {
+  const handlePageChange = (page: any) => {
+    setCurrentPage((prevState: any) => {
       return {
         ...prevState,
         highestRated: page,

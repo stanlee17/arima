@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
 import { apiBaseUrl } from '@/api/api';
 import HeroSection from '@/components/layout/HeroSection/HeroSection';
 import HighestRated from '@/components/features/Home/HighestRated/HighestRated';
@@ -27,7 +28,7 @@ const HomePage = ({ upcoming, highestRated, airing }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   // Multiple fetching of Upcoming, Trending Anime
   const [upcomingRes, highestRatedRes, airingRes] = await Promise.all([
     fetch(`${apiBaseUrl}/seasons/upcoming?limit=6`),

@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import Ai from '@/../public/backgrounds/ai.webp';
+import Ai from '../../public/backgrounds/ai.webp';
 import PageHeader from '@/components/common/PageHeader/PageHeader';
 import Contact from '@/components/pages/Contact/Contact';
 

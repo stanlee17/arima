@@ -22,7 +22,7 @@ const getPagesCut = ({ pagesCount, pagesCutCount, currentPage }) => {
 };
 
 const PaginationItem = ({ page, currentPage, onPageChange, isDisabled }) => {
-  function liClasses(page, currentPage, isDisabled) {
+  function liClasses(page: any, currentPage: any, isDisabled: any) {
     if (page === currentPage) return styles.pageItemActive;
     else if (isDisabled) return styles.pageItemDisabled;
     return styles.pageItem;
@@ -72,6 +72,7 @@ const Pagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
             page={page}
             currentPage={currentPage}
             onPageChange={onPageChange}
+            isDisabled={false}
           />
         ))}
         <PaginationItem

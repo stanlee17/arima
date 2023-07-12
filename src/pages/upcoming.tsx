@@ -1,7 +1,8 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
+import { GetServerSideProps } from 'next';
 import { apiBaseUrl } from '@/api/api';
-import Akane from '@/../public/backgrounds/akane.webp';
+import Akane from '../../public/backgrounds/akane.webp';
 import PageHeader from '@/components/common/PageHeader/PageHeader';
 import Upcoming from '@/components/pages/Upcoming/Upcoming';
 
@@ -26,8 +27,8 @@ const UpcomingPage = ({ data }) => {
   );
 };
 
-export const getServerSideProps = async ({ query }) => {
-  let res;
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  let res: any;
   if (query.page) {
     res = await fetch(
       `${apiBaseUrl}/seasons/upcoming?limit=24&sfw=true&page=${query.page}`

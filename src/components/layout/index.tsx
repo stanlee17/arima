@@ -9,7 +9,7 @@ const inter = Inter({
   style: ['normal'],
 });
 
-function Layout(props) {
+function Layout(props: any) {
   return (
     <div className={`${styles.app} ${inter.className}`}>
       <Header />

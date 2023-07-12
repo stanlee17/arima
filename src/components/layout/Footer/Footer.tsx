@@ -1,6 +1,6 @@
 import styles from './Footer.module.scss';
 import Link from 'next/link';
-import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from 'react-icons/io5';
+import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
 import { Container } from 'react-bootstrap';
 
 function Footer() {

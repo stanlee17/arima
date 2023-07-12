@@ -1,30 +1,30 @@
 import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import { Container } from 'react-bootstrap';
-import styles from './Upcoming.module.scss';
+import styles from './Airing.module.scss';
 import { PaginationContext } from '@/contexts/PaginationContext';
 import AnimeCard from '@/components/common/AnimeCard/AnimeCard';
 import Pagination from '@/components/common/Pagination/Pagination';
 
-const Upcoming = ({ data }) => {
+const Airing = ({ data }) => {
   const { currentPage, setCurrentPage } = useContext(PaginationContext);
   const router = useRouter();
   const pageSize = data.pagination.items.per_page;
   const itemsCount = data.pagination.items.total;
 
-  const handlePageChange = (page) => {
-    setCurrentPage((prevState) => {
+  const handlePageChange = (page: any) => {
+    setCurrentPage((prevState: any) => {
       return {
         ...prevState,
         airing: page,
       };
     });
-    router.push(`/upcoming?page=${page}`);
+    router.push(`/airing?page=${page}`);
   };
 
   return (
     <Container>
-      <div className={styles.upcoming}>
+      <div className={styles.airing}>
         <AnimeCard data={data.data} />
         <Pagination
           itemsCount={itemsCount}
@@ -37,4 +37,4 @@ const Upcoming = ({ data }) => {
   );
 };
 
-export default Upcoming;
+export default Airing;

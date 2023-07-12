@@ -1,7 +1,5 @@
 import { Container } from 'react-bootstrap';
-
 import styles from './AnimeDetails.module.scss';
-
 import AnimeInfo from './AnimeInfo/AnimeInfo';
 import AnimeContent from './AnimeContent/AnimeContent';
 

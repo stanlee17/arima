@@ -5,6 +5,7 @@ export const PaginationContext = createContext(null);
 
 const PaginationProvider = ({ children }) => {
   const router = useRouter();
+
   const [currentPage, setCurrentPage] = useState({
     highestRated: 1,
     upcoming: 1,
