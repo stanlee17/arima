@@ -4,10 +4,7 @@ import AnimeTrailer from '../AnimeTrailer/AnimeTrailer';
 import styles from './AnimeContent.module.scss';
 
 interface AnimeContentProps {
-  anime: {
-    title: string;
-    synopsis: string;
-  };
+  anime: any;
   characters: any;
 }
 
