@@ -3,7 +3,21 @@ import Link from 'next/link';
 import { Col, Row } from 'react-bootstrap';
 import styles from './AnimeCard.module.scss';
 
-const AnimeCard = ({ data }) => {
+interface AnimeCardProps {
+  data: Array<DataProps>;
+}
+
+interface DataProps {
+  mal_id: string;
+  title: string;
+  images: {
+    webp: {
+      image_url: string;
+    };
+  };
+}
+
+const AnimeCard = ({ data }: AnimeCardProps) => {
   return (
     data && (
       <div>

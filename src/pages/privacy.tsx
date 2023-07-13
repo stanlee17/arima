@@ -15,7 +15,7 @@ const PrivacyPage = () => {
           key="desc"
         />
       </Head>
-      <PageHeader heading="Privacy Policy" sub background={Ruby} />
+      <PageHeader heading="Privacy Policy" background={Ruby} />
       <Privacy />
     </Fragment>
   );

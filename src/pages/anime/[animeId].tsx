@@ -4,7 +4,19 @@ import { GetServerSideProps } from 'next';
 import { apiBaseUrl } from '@/api/api';
 import AnimeDetails from '@/components/features/AnimeDetails/AnimeDetails';
 
-const AnimeDetailPage = ({ anime, characters }) => {
+interface AnimeDetailProps {
+  anime: {
+    data: {
+      title: string;
+      synopsis: string;
+    };
+  };
+  characters: {
+    data: any;
+  };
+}
+
+const AnimeDetailPage = ({ anime, characters }: AnimeDetailProps) => {
   return (
     anime && (
       <Fragment>

@@ -1,19 +1,23 @@
-import styles from './HighestRated.module.scss';
-import { Container } from 'react-bootstrap';
 import Link from 'next/link';
+import { Container } from 'react-bootstrap';
 import AnimeCard from '@/components/common/AnimeCard/AnimeCard';
+import styles from './Upcoming.module.scss';
 
-const HighestRated = ({ highestRated }) => {
-  const data = highestRated.data;
+interface UpcomingProps {
+  upcoming: any;
+}
+
+const Upcoming = ({ upcoming }: UpcomingProps) => {
+  const data = upcoming?.data;
 
   return (
     <Container>
-      <div className={styles.highestRated}>
+      <div className={styles.upcoming}>
         <div className={styles.heading}>
           <h2>
-            <span>H</span>ighest Rated
+            <span>U</span>pcoming
           </h2>
-          <Link href="/highestRated" className={styles.viewAll}>
+          <Link href="/upcoming" className={styles.viewAll}>
             View All
           </Link>
         </div>
@@ -29,4 +33,4 @@ const HighestRated = ({ highestRated }) => {
   );
 };
 
-export default HighestRated;
+export default Upcoming;

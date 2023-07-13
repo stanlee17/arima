@@ -3,7 +3,30 @@ import { dataCheck } from '@/utils/utils';
 import { FaStar, FaHeart } from 'react-icons/fa';
 import styles from './AnimeInfo.module.scss';
 
-const AnimeInfo = ({ anime }) => {
+interface AnimeInfoProps {
+  anime: {
+    title: string;
+    rank: number;
+    popularity: number;
+    type: string;
+    source: string;
+    episodes: number;
+    status: string;
+    duration: string;
+    rating: number;
+    season: string;
+    broadcast: {
+      string: string;
+    };
+    images: {
+      webp: {
+        large_image_url: string;
+      };
+    };
+  };
+}
+
+const AnimeInfo = ({ anime }: AnimeInfoProps) => {
   return (
     <div className={styles.animeInfo}>
       {/* Main Anime Image */}

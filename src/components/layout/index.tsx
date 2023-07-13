@@ -3,17 +3,21 @@ import Header from './Header';
 import Footer from './Footer';
 import { Inter } from 'next/font/google';
 
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
 const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   style: ['normal'],
 });
 
-function Layout(props: any) {
+function Layout({ children }: LayoutProps) {
   return (
     <div className={`${styles.app} ${inter.className}`}>
       <Header />
-      <main className={styles.main}>{props.children}</main>
+      <main className={styles.main}>{children}</main>
       <Footer />
     </div>
   );

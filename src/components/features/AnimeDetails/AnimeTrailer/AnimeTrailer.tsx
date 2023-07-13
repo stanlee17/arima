@@ -1,11 +1,20 @@
 import styles from './AnimeTrailer.module.scss';
 import { editUrlParams } from '@/utils/utils';
 
-const AnimeTrailer = ({ anime }) => {
+interface AnimeTrailer {
+  anime: {
+    title: string;
+    trailer: {
+      embed_url: string;
+    };
+  };
+}
+
+const AnimeTrailer = ({ anime }: AnimeTrailer) => {
   const trailerUrl = anime.trailer.embed_url;
 
   // Disables autoplay parameter in trailer url
-  let disableAutoplay: any;
+  let disableAutoplay: string;
   if (trailerUrl) {
     disableAutoplay = editUrlParams(trailerUrl, 'autoplay', 0);
   }

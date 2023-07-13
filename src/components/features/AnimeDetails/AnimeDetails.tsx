@@ -3,7 +3,12 @@ import styles from './AnimeDetails.module.scss';
 import AnimeInfo from './AnimeInfo/AnimeInfo';
 import AnimeContent from './AnimeContent/AnimeContent';
 
-const AnimeDetails = ({ anime, characters }) => {
+interface AnimeDetailsProps {
+  anime: any;
+  characters: any;
+}
+
+const AnimeDetails = ({ anime, characters }: AnimeDetailsProps) => {
   return (
     anime && (
       <Container>

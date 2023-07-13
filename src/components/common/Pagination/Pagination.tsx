@@ -4,8 +4,6 @@ import lodash from 'lodash';
 const getPagesCut = ({ pagesCount, pagesCutCount, currentPage }) => {
   const ceiling = Math.ceil(pagesCutCount / 2);
   const floor = Math.floor(pagesCutCount / 2);
-  console.log(ceiling, 'ceiling');
-  console.log(floor, 'floor');
 
   if (pagesCount < pagesCutCount) {
     return {
@@ -39,14 +37,10 @@ const PaginationItem = ({ page, currentPage, onPageChange, isDisabled }) => {
 const Pagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
   const pagesCount = Math.ceil(itemsCount / pageSize);
 
-  console.log(currentPage);
-
   const pagesCut = getPagesCut({ pagesCount, pagesCutCount: 5, currentPage });
   const pages = lodash.range(pagesCut.start, pagesCut.end);
   const isFirstPage = currentPage === 1;
   const isLastPage = currentPage === pagesCount;
-
-  console.log(pagesCount);
 
   // Remove pagination if pagesCount is 1
   if (pagesCount === 1) return null;

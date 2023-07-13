@@ -1,5 +1,9 @@
 // C. SETUP OF GA PAGE VIEWS
-export const pageview = (url: any) => {
+type pageViewProps = {
+  url: string;
+};
+
+export const pageview = (url: pageViewProps) => {
   window.gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
     path_url: url,
   });

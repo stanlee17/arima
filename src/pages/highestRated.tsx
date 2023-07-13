@@ -6,7 +6,11 @@ import { apiBaseUrl } from '@/api/api';
 import PageHeader from '@/components/common/PageHeader/PageHeader';
 import HighestRated from '@/components/pages/HighestRated/HighestRated';
 
-const HighestRatedPage = ({ data }) => {
+interface HighestRatedProps {
+  data: any;
+}
+
+const HighestRatedPage = ({ data }: HighestRatedProps) => {
   return (
     <Fragment>
       <Head>

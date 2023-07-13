@@ -3,10 +3,20 @@ import { useRouter } from 'next/router';
 
 export const PaginationContext = createContext(null);
 
-const PaginationProvider = ({ children }) => {
+interface PaginationProviderProps {
+  children: React.ReactNode;
+}
+
+interface CurrentPageProps {
+  highestRated: number;
+  upcoming: number;
+  airing: number;
+}
+
+const PaginationProvider = ({ children }: PaginationProviderProps) => {
   const router = useRouter();
 
-  const [currentPage, setCurrentPage] = useState({
+  const [currentPage, setCurrentPage] = useState<CurrentPageProps>({
     highestRated: 1,
     upcoming: 1,
     airing: 1,

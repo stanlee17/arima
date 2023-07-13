@@ -1,19 +1,23 @@
+import styles from './HighestRated.module.scss';
 import { Container } from 'react-bootstrap';
 import Link from 'next/link';
-import styles from './Airing.module.scss';
 import AnimeCard from '@/components/common/AnimeCard/AnimeCard';
 
-const Airing = ({ airing }) => {
-  const data = airing.data;
+interface HighestRatedProps {
+  highestRated: any;
+}
+
+const HighestRated = ({ highestRated }: HighestRatedProps) => {
+  const data = highestRated?.data;
 
   return (
     <Container>
-      <div className={styles.airing} id="airing">
+      <div className={styles.highestRated}>
         <div className={styles.heading}>
           <h2>
-            <span>A</span>iring
+            <span>H</span>ighest Rated
           </h2>
-          <Link href="/airing" className={styles.viewAll}>
+          <Link href="/highestRated" className={styles.viewAll}>
             View All
           </Link>
         </div>
@@ -29,4 +33,4 @@ const Airing = ({ airing }) => {
   );
 };
 
-export default Airing;
+export default HighestRated;

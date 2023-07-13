@@ -6,7 +6,11 @@ import Akane from '../../public/backgrounds/akane.webp';
 import PageHeader from '@/components/common/PageHeader/PageHeader';
 import Upcoming from '@/components/pages/Upcoming/Upcoming';
 
-const UpcomingPage = ({ data }) => {
+interface UpcomingProps {
+  data: any;
+}
+
+const UpcomingPage = ({ data }: UpcomingProps) => {
   return (
     <Fragment>
       <Head>

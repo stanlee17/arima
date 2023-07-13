@@ -6,7 +6,11 @@ import KanaArima from '../../public/backgrounds/kana_arima.webp';
 import PageHeader from '@/components/common/PageHeader/PageHeader';
 import Airing from '@/components/pages/Airing/Airing';
 
-const AiringPage = ({ data }) => {
+interface AiringProps {
+  data: any;
+}
+
+const AiringPage = ({ data }: AiringProps) => {
   return (
     <Fragment>
       <Head>

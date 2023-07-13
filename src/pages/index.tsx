@@ -7,7 +7,13 @@ import HighestRated from '@/components/features/Home/HighestRated/HighestRated';
 import Airing from '@/components/features/Home/Airing/Airing';
 import Upcoming from '@/components/features/Home/Upcoming/Upcoming';
 
-const HomePage = ({ upcoming, highestRated, airing }) => {
+interface HomeProps {
+  upcoming: any;
+  highestRated: any;
+  airing: any;
+}
+
+const HomePage = ({ upcoming, highestRated, airing }: HomeProps) => {
   return (
     <Fragment>
       <Head>

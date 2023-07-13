@@ -3,10 +3,14 @@ import Link from 'next/link';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import styles from './Header.module.scss';
 
-const inlineStyle = {
+interface inlineStyleProps {
+  navbar: React.CSSProperties;
+}
+
+const inlineStyle: inlineStyleProps = {
   navbar: {
     backgroundColor: '#171d2f',
-    transition: 'background-color .7s ease-out',
+    transition: 'background-color .7s ease, padding .7s ease',
   },
 };
 

@@ -6,14 +6,24 @@ import AnimeCard from '@/components/common/AnimeCard/AnimeCard';
 import Pagination from '@/components/common/Pagination/Pagination';
 import styles from './HighestRated.module.scss';
 
-const HighestRated = ({ data }) => {
+interface HighestRatedProps {
+  data: any;
+}
+
+interface CurrentPageProps {
+  highestRated: number;
+  upcoming: number;
+  airing: number;
+}
+
+const HighestRated = ({ data }: HighestRatedProps) => {
   const { currentPage, setCurrentPage } = useContext(PaginationContext);
   const router = useRouter();
   const pageSize = data.pagination.items.per_page;
   const itemsCount = data.pagination.items.total;
 
-  const handlePageChange = (page: any) => {
-    setCurrentPage((prevState: any) => {
+  const handlePageChange = (page: number) => {
+    setCurrentPage((prevState: CurrentPageProps) => {
       return {
         ...prevState,
         highestRated: page,

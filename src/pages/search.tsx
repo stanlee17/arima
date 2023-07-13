@@ -4,7 +4,11 @@ import { GetServerSideProps } from 'next';
 import { apiBaseUrl } from '@/api/api';
 import Search from '@/components/pages/Search/Search';
 
-const SearchPage = ({ anime }) => {
+interface SearchProps {
+  anime: any;
+}
+
+const SearchPage = ({ anime }: SearchProps) => {
   return (
     <Fragment>
       <Head>

@@ -10,12 +10,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/styles/globals.css';
 import PaginationProvider from '@/contexts/PaginationContext';
 
+interface RouteChangeProps {
+  url: string;
+}
+
 function App({ Component, pageProps }: AppProps) {
   // C. SETUP OF GA PAGE VIEWS
   const router = useRouter();
 
   useEffect(() => {
-    const handleRouteChange = (url: string) => {
+    const handleRouteChange = (url: RouteChangeProps) => {
       ga.pageview(url);
     };
     router.events.on('routeChangeComplete', handleRouteChange);

@@ -5,11 +5,18 @@ import { Form } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import AnimeCard from '@/components/common/AnimeCard/AnimeCard';
 
-const Search = ({ anime }) => {
+interface SearchProps {
+  anime: {
+    data: any;
+  };
+  onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
+}
+
+const Search = ({ anime }: SearchProps) => {
   const router = useRouter();
   const [search, setSearch] = useState('');
 
-  const submitHandler = (e: any) => {
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push(`/search?query=${search}`);
   };

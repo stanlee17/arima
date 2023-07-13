@@ -4,9 +4,28 @@ import { FaHeart } from 'react-icons/fa';
 import styles from './AnimeCharacters.module.scss';
 import { Row, Col } from 'react-bootstrap';
 
-const AnimeCharacters = ({ characters }) => {
+interface AnimeCharactersProps {
+  characters: Array<CharacterProps>;
+}
+
+interface CharacterProps {
+  character: {
+    mal_id: string;
+    url: string;
+    name: string;
+    images: {
+      webp: {
+        image_url: string;
+      };
+    };
+  };
+  role: string;
+  favorites: number;
+}
+
+const AnimeCharacters = ({ characters }: AnimeCharactersProps) => {
   // Sort Characters By Favorites & Role
-  const sortCharacters = (characters) => {
+  const sortCharacters = (characters: CharacterProps[]) => {
     characters.sort((a, b) => {
       return a.role.localeCompare(b.role) || b.favorites - a.favorites;
     });
@@ -18,7 +37,7 @@ const AnimeCharacters = ({ characters }) => {
       <div className={styles.characters}>
         <h5>Characters</h5>
         <Row lg={3} xs={1} className="g-4">
-          {characters.slice(0, 6).map((character) => (
+          {characters.slice(0, 6).map((character: CharacterProps) => (
             <Col key={character.character.mal_id}>
               <Link href={character.character.url} target="_blank">
                 <div
