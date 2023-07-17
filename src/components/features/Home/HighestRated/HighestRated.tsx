@@ -12,7 +12,7 @@ interface HighestRatedProps {
 const HighestRated = ({ highestRated }: HighestRatedProps) => {
   const isDesktopOrLaptop = useBetterMediaQuery('(min-width: 1224px)');
   const isTabletOrMobile = useBetterMediaQuery('(max-width: 1224px)');
-  const data = highestRated?.data;
+  const data = highestRated.data;
 
   return (
     <Container>

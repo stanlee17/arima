@@ -25,7 +25,7 @@ const HomePage = ({ upcoming, highestRated, airing }: HomeProps) => {
         />
       </Head>
       <HeroSection />
-      <div className="py-5">
+      <div style={{ padding: '5rem 0' }}>
         <Airing airing={airing} />
         <Upcoming upcoming={upcoming} />
         <HighestRated highestRated={highestRated} />

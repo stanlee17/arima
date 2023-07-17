@@ -23,7 +23,7 @@ const HeroSection = () => {
                 to="airing"
                 spy={true}
                 smooth={true}
-                offset={-70}
+                offset={-120}
                 duration={0}
                 className={styles.button}
               >

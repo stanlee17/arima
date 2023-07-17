@@ -6,7 +6,7 @@
 
   img {
     min-width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
     object-fit: cover;
   }
 
@@ -19,20 +19,21 @@
   @include devices(laptop) {
     & img {
       max-width: 125px;
-      max-height: 180px;
+      max-height: 200px;
     }
   }
 
   @include devices(tablet) {
     & img {
-      max-height: 200px;
+      max-width: 125px;
+      max-height: 250px;
     }
   }
 
   @include devices(mobile) {
     & img {
       max-width: 70px;
-      max-height: 200px;
+      max-height: 150px;
     }
 
     & .animeLink {
