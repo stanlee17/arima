@@ -12,6 +12,7 @@
       "@/components/*": ["components/*"],
       "@/lib/*": ["lib/*"],
       "@/contexts/*": ["contexts/*"],
+      "@/hooks/*": ["hooks/*"],
       "@/api/*": ["api/*"],
       "@/utils/*": ["utils/*"]
     },

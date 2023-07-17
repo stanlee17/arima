@@ -1,6 +1,6 @@
 import styles from './HighestRated.module.scss';
 import { Container } from 'react-bootstrap';
-import { useMediaQuery } from 'react-responsive';
+import { useBetterMediaQuery } from '@/hooks/useBetterMediaQuery';
 import Link from 'next/link';
 import HighestRatedCard from '@/components/common/HighestRatedCard/HighestRatedCard';
 import AnimeCard from '@/components/common/AnimeCard/AnimeCard';
@@ -10,18 +10,15 @@ interface HighestRatedProps {
 }
 
 const HighestRated = ({ highestRated }: HighestRatedProps) => {
-  const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
-
-  const data = highestRated.data;
+  const isDesktopOrLaptop = useBetterMediaQuery('(min-width: 1224px)');
+  const isTabletOrMobile = useBetterMediaQuery('(max-width: 1224px)');
+  const data = highestRated?.data;
 
   return (
     <Container>
       <div className={styles.highestRated}>
         <div className={styles.heading}>
-          <h2>
-            <span>H</span>ighest Rated
-          </h2>
+          <h2>Highest Rated</h2>
           <Link href="/highestRated" className={styles.viewAll}>
             View All
           </Link>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaStar, FaHeart } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa';
 import styles from './HighestRatedCard.module.scss';
 import Color from 'color-thief-react';
 import Genre from '../Genre/Genre';
