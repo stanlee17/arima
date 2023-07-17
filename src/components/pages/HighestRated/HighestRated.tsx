@@ -7,7 +7,15 @@ import Pagination from '@/components/common/Pagination/Pagination';
 import styles from './HighestRated.module.scss';
 
 interface HighestRatedProps {
-  data: any;
+  data: {
+    pagination: {
+      items: {
+        per_page: number;
+        total: number;
+      };
+    };
+    data: any;
+  };
 }
 
 interface CurrentPageProps {

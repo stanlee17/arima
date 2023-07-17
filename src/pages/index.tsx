@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
   // Multiple fetching of Upcoming, Trending Anime
   const [upcomingRes, highestRatedRes, airingRes] = await Promise.all([
     fetch(`${apiBaseUrl}/seasons/upcoming?limit=6`),
-    fetch(`${apiBaseUrl}/top/anime?limit=6`),
+    fetch(`${apiBaseUrl}/top/anime?limit=10`),
     fetch(`${apiBaseUrl}/seasons/now?limit=6`),
   ]);
   const [upcoming, highestRated, airing] = await Promise.all([

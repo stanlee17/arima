@@ -36,7 +36,6 @@ const PaginationItem = ({ page, currentPage, onPageChange, isDisabled }) => {
 
 const Pagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
   const pagesCount = Math.ceil(itemsCount / pageSize);
-
   const pagesCut = getPagesCut({ pagesCount, pagesCutCount: 5, currentPage });
   const pages = lodash.range(pagesCut.start, pagesCut.end);
   const isFirstPage = currentPage === 1;

@@ -1,0 +1,78 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.highestRatedCard {
+  display: flex;
+
+  & .rankWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 7%;
+
+    & h3 {
+      font-weight: 700;
+      color: #cecece;
+    }
+  }
+
+  & .cardOverlay {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: $bgOverlayColor;
+    min-width: 93%;
+    padding: 0.8rem 1rem;
+
+    & .coverImage {
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    & .titleGenres {
+      margin-left: 1rem;
+
+      & .title {
+        font-weight: 700;
+      }
+
+      & .genres {
+        display: flex;
+        gap: 10px;
+        margin-top: 0.7rem;
+      }
+    }
+
+    & .moreInfo {
+      display: grid;
+      grid-template-columns: repeat(3, 115px);
+      gap: 2rem;
+      margin-left: auto;
+
+      & .score {
+        h5 {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+
+      & .score,
+      & .episodes,
+      & .type {
+        & h5 {
+          font-weight: 700;
+          font-size: 1rem;
+        }
+
+        & p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  & .rankWrapper,
+  & .cardOverlay {
+    margin-top: 2rem;
+  }
+}

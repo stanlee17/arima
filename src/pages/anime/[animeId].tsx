@@ -4,19 +4,23 @@ import { GetServerSideProps } from 'next';
 import { apiBaseUrl } from '@/api/api';
 import AnimeDetails from '@/components/features/AnimeDetails/AnimeDetails';
 
-interface AnimeDetailProps {
+type AnimeDetailProps<T> = {
   anime: {
     data: {
       title: string;
       synopsis: string;
+      data: T;
     };
   };
   characters: {
-    data: any;
+    data: T;
   };
-}
+};
 
-const AnimeDetailPage = ({ anime, characters }: AnimeDetailProps) => {
+const AnimeDetailPage = <T extends unknown>({
+  anime,
+  characters,
+}: AnimeDetailProps<T>) => {
   return (
     anime && (
       <Fragment>

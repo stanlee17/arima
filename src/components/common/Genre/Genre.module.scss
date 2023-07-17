@@ -1,0 +1,10 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.genre {
+  border-radius: 10rem;
+  font-weight: 500;
+  cursor: default;
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.3rem 1.2rem;
+}

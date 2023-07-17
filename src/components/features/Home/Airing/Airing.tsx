@@ -8,7 +8,7 @@ interface AiringProps {
 }
 
 const Airing = ({ airing }: AiringProps) => {
-  const data = airing?.data;
+  const data = airing.data;
 
   return (
     <Container>

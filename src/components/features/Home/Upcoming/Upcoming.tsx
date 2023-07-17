@@ -8,7 +8,7 @@ interface UpcomingProps {
 }
 
 const Upcoming = ({ upcoming }: UpcomingProps) => {
-  const data = upcoming?.data;
+  const data = upcoming.data;
 
   return (
     <Container>
