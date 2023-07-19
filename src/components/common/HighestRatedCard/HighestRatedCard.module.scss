@@ -18,13 +18,13 @@
   & .cardOverlay {
     display: flex;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: $bgOverlayColor;
     min-width: 93%;
     padding: 0.8rem 1rem;
 
     & .coverImage {
-      border-radius: 10px;
+      border-radius: 5px;
       object-fit: cover;
     }
 
@@ -66,6 +66,7 @@
 
         & p {
           font-size: 0.8rem;
+          margin: 0;
         }
       }
     }

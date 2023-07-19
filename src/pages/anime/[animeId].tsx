@@ -1,26 +1,38 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import { GetServerSideProps } from 'next';
-import { apiBaseUrl } from '@/api/api';
+import { useRouter } from 'next/router';
+import useSWR from 'swr';
+import { fetcher } from '@/api/api';
+import Spinners from '@/components/common/Spinners/Spinners';
 import AnimeDetails from '@/components/features/AnimeDetails/AnimeDetails';
 
-type AnimeDetailProps<T> = {
-  anime: {
-    data: {
-      title: string;
-      synopsis: string;
-      data: T;
-    };
-  };
-  characters: {
-    data: T;
-  };
-};
+const AnimeDetailPage = () => {
+  const router = useRouter();
+  const { animeId } = router.query;
 
-const AnimeDetailPage = <T extends unknown>({
-  anime,
-  characters,
-}: AnimeDetailProps<T>) => {
+  const {
+    data: anime,
+    error: animeErr,
+    isLoading: animeLoading,
+  } = useSWR(animeId ? `/anime/${animeId}` : null, animeId ? fetcher : null);
+
+  const {
+    data: characters,
+    error: charactersErr,
+    isLoading: charactersLoading,
+  } = useSWR(
+    animeId ? `/anime/${animeId}/characters` : null,
+    animeId ? fetcher : null
+  );
+
+  console.log(anime, characters);
+
+  if (animeLoading || charactersLoading)
+    return <Spinners loading={animeLoading || charactersLoading} />;
+
+  if (animeErr || charactersErr)
+    return <div>Couldnt retrieve data at this time</div>;
+
   return (
     anime && (
       <Fragment>
@@ -32,39 +44,6 @@ const AnimeDetailPage = <T extends unknown>({
       </Fragment>
     )
   );
-};
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const animeId = context.params.animeId;
-
-  // Multiple fetching of Upcoming, Trending Anime
-  const [animeRes, charactersRes] = await Promise.all([
-    fetch(`${apiBaseUrl}/anime/${animeId}`),
-    fetch(`${apiBaseUrl}/anime/${animeId}/characters`),
-  ]);
-
-  const [anime, characters] = await Promise.all([
-    animeRes.json(),
-    charactersRes.json(),
-  ]);
-
-  if (!animeRes.ok || !charactersRes.ok) {
-    throw new Error(`Failed to fetch posts anime and or characters`);
-  }
-
-  // Check if anime exist
-  if (anime.status === 404) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      anime,
-      characters,
-    },
-  };
 };
 
 export default AnimeDetailPage;

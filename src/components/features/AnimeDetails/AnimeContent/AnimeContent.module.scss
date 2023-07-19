@@ -1,6 +1,7 @@
 @use '@/styles/scss/abstracts/' as *;
 
 .animeContent {
+  width: 100%;
   margin-left: 3rem;
 
   & h2 {
@@ -10,7 +11,7 @@
 
   & .synopsisOverlay {
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 0.9rem;
     line-height: 2;
     background-color: $bgOverlayColor;

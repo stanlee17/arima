@@ -9,6 +9,8 @@ import { SSRProvider } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/styles/globals.css';
 import PaginationProvider from '@/contexts/PaginationContext';
+import { SWRConfig } from 'swr';
+import { fetcher } from '@/api/api';
 
 interface RouteChangeProps {
   url: string;
@@ -52,11 +54,17 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <SSRProvider>
-        <PaginationProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </PaginationProvider>
+        <SWRConfig
+          value={{
+            fetcher,
+          }}
+        >
+          <PaginationProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </PaginationProvider>
+        </SWRConfig>
       </SSRProvider>
     </Fragment>
   );
