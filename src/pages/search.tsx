@@ -1,14 +1,8 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import { GetServerSideProps } from 'next';
-import { apiBaseUrl } from '@/api/api';
 import Search from '@/components/pages/Search/Search';
 
-interface SearchProps {
-  anime: any;
-}
-
-const SearchPage = ({ anime }: SearchProps) => {
+const SearchPage = () => {
   return (
     <Fragment>
       <Head>
@@ -19,23 +13,9 @@ const SearchPage = ({ anime }: SearchProps) => {
           key="desc"
         />
       </Head>
-      <Search anime={anime} />
+      <Search />
     </Fragment>
   );
-};
-
-export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const res = await fetch(
-    `${apiBaseUrl}/anime?q=${query.query}&limit=24&sfw=true`
-  );
-  const json = await res.json();
-  const anime = json;
-
-  return {
-    props: {
-      anime,
-    },
-  };
 };
 
 export default SearchPage;

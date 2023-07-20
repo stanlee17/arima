@@ -8,7 +8,6 @@ import { useRouter } from 'next/router';
 import { SSRProvider } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/styles/globals.css';
-import PaginationProvider from '@/contexts/PaginationContext';
 import { SWRConfig } from 'swr';
 import { fetcher } from '@/api/api';
 
@@ -59,11 +58,9 @@ function App({ Component, pageProps }: AppProps) {
             fetcher,
           }}
         >
-          <PaginationProvider>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </PaginationProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </SWRConfig>
       </SSRProvider>
     </Fragment>
