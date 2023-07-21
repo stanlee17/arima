@@ -1,7 +1,38 @@
 import styles from './Pagination.module.scss';
 import lodash from 'lodash';
+import { IconType } from 'react-icons/lib';
+import {
+  HiChevronLeft,
+  HiChevronRight,
+  HiChevronDoubleLeft,
+  HiChevronDoubleRight,
+} from 'react-icons/hi2';
 
-const getPagesCut = ({ pagesCount, pagesCutCount, currentPage }) => {
+interface PagesCutProps {
+  pagesCount: number;
+  pagesCutCount: number;
+  currentPage: number;
+}
+
+interface PaginationItemProps {
+  page: React.ReactNode;
+  currentPage: number;
+  onPageChange: (page: React.ReactNode) => void;
+  isDisabled: boolean;
+}
+
+interface PaginationProps {
+  itemsCount: number;
+  currentPage: number;
+  pageSize: number;
+  onPageChange: (page: React.ReactNode) => void;
+}
+
+const getPagesCut = ({
+  pagesCount,
+  pagesCutCount,
+  currentPage,
+}: PagesCutProps) => {
   const ceiling = Math.ceil(pagesCutCount / 2);
   const floor = Math.floor(pagesCutCount / 2);
 
@@ -19,14 +50,23 @@ const getPagesCut = ({ pagesCount, pagesCutCount, currentPage }) => {
   }
 };
 
-const PaginationItem = ({ page, currentPage, onPageChange, isDisabled }) => {
-  function liClasses(page: any, currentPage: any, isDisabled: any) {
+const PaginationItem = ({
+  page,
+  currentPage,
+  onPageChange,
+  isDisabled,
+}: PaginationItemProps) => {
+  function liClasses(
+    page: React.ReactNode,
+    currentPage: number,
+    isDisabled: boolean
+  ) {
     if (page === currentPage) return styles.pageItemActive;
     else if (isDisabled) return styles.pageItemDisabled;
     return styles.pageItem;
   }
   return (
-    <li key={page} className={liClasses(page, currentPage, isDisabled)}>
+    <li className={liClasses(page, currentPage, isDisabled)}>
       <button className={styles.pageLink} onClick={() => onPageChange(page)}>
         <span className={styles.pageLinkIcon}>{page}</span>
       </button>
@@ -34,7 +74,12 @@ const PaginationItem = ({ page, currentPage, onPageChange, isDisabled }) => {
   );
 };
 
-const Pagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
+const Pagination = ({
+  itemsCount,
+  currentPage,
+  pageSize,
+  onPageChange,
+}: PaginationProps) => {
   const pagesCount = Math.ceil(itemsCount / pageSize);
   const pagesCut = getPagesCut({ pagesCount, pagesCutCount: 5, currentPage });
   const pages = lodash.range(pagesCut.start, pagesCut.end);
@@ -48,13 +93,13 @@ const Pagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
     <nav className={styles.pageNav} aria-label="user pagination">
       <ul className={styles.pagination}>
         <PaginationItem
-          page="First"
+          page={<HiChevronDoubleLeft />}
           currentPage={currentPage}
           onPageChange={() => onPageChange(1)}
           isDisabled={isFirstPage}
         />
         <PaginationItem
-          page="Prev"
+          page={<HiChevronLeft />}
           currentPage={currentPage}
           onPageChange={() => onPageChange(currentPage - 1)}
           isDisabled={isFirstPage}
@@ -69,13 +114,13 @@ const Pagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
           />
         ))}
         <PaginationItem
-          page="Next"
+          page={<HiChevronRight />}
           currentPage={currentPage}
           onPageChange={() => onPageChange(currentPage + 1)}
           isDisabled={isLastPage}
         />
         <PaginationItem
-          page="Last"
+          page={<HiChevronDoubleRight />}
           currentPage={currentPage}
           onPageChange={() => onPageChange(pagesCount)}
           isDisabled={isLastPage}

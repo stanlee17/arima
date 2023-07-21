@@ -19,7 +19,7 @@
   align-items: center;
 
   .pageLink {
-    width: 3rem;
+    width: 2.5rem;
     height: 3rem;
     border: none;
     background-color: $bgOverlayColor;
@@ -33,9 +33,11 @@
       font-size: 1em;
       transition: all 0.1s ease-in-out;
     }
+  }
 
-    &:hover .pageLinkIcon {
-      font-size: 1.02rem;
+  @include devices(mobile) {
+    .pageLink {
+      width: 2rem;
     }
   }
 }
@@ -44,10 +46,7 @@
   @extend %pageBox;
 
   .pageLink {
-    .pageLinkIcon,
-    &:hover .pageLinkIcon {
-      color: $primaryColor;
-    }
+    background-color: $primaryColor;
   }
 }
 
@@ -55,6 +54,7 @@
   @extend %pageBox;
 
   .pageLink {
+    background-color: #131827;
     border: none;
     pointer-events: none;
     cursor: not-allowed;

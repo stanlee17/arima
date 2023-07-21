@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 7%;
+    min-width: 10%;
 
     & h3 {
       font-weight: 700;
@@ -20,7 +20,7 @@
     align-items: center;
     border-radius: 5px;
     background-color: $bgOverlayColor;
-    min-width: 93%;
+    min-width: 90%;
     padding: 0.8rem 1rem;
 
     & .coverImage {

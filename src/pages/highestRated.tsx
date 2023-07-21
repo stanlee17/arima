@@ -23,7 +23,7 @@ const HighestRatedPage = ({ data }: HighestRatedProps) => {
       </Head>
       <PageHeader
         heading="Highest Rated"
-        sub="Top 100 of the highest rated Anime of all time"
+        sub="Highest rated Anime of all time"
         background={Memcho}
       />
       <HighestRated data={data} />
@@ -37,10 +37,10 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   // CONDITIONAL: Fetch new data if page query exist, otherwise fetch the first top 20 anime
   if (query.page) {
     res = await fetch(
-      `${apiBaseUrl}/top/anime?limit=20&sfw=true&page=${query.page}`
+      `${apiBaseUrl}/top/anime?limit=24&sfw=true&page=${query.page}`
     );
   } else {
-    res = await fetch(`${apiBaseUrl}/top/anime?limit=20&sfw=true`);
+    res = await fetch(`${apiBaseUrl}/top/anime?limit=24&sfw=true`);
   }
 
   const data = await res.json();
